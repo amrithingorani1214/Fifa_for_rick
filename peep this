@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 //add the file Text.txt to the same place you save this file
+//I found out that this uses less memory and most processes are Log(n) and it sorts everything automatically :D
 
 public class TreeSetExample {
 
