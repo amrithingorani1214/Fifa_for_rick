@@ -3,7 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
  
 /* FrameDemo.java requires no other files. */
-public class FrameDemo { 
+public class FrameDemo implements ActionListener { 
     /**
      * Create the GUI and show it.  For thread safety,
      * this method should be invoked from the
@@ -42,21 +42,24 @@ public class FrameDemo {
 	menuBar.add(menu);
 
 	//a group of JMenuItems
-	menuItem = new JMenuItem("A text-only menu item",
+	menuItem = new JMenuItem("Roster",
 				 KeyEvent.VK_T);
 	menuItem.setAccelerator(KeyStroke.getKeyStroke(
 						       KeyEvent.VK_1, ActionEvent.ALT_MASK));
 	menuItem.getAccessibleContext().setAccessibleDescription(
 								 "This doesn't really do anything");
+	menuItem.addActionListener(this);
 	menu.add(menuItem);
 
 	menuItem = new JMenuItem("Both text and icon",
 				 new ImageIcon("images/middle.gif"));
 	menuItem.setMnemonic(KeyEvent.VK_B);
+	menuItem.addActionListener(this);
 	menu.add(menuItem);
 
 	menuItem = new JMenuItem(new ImageIcon("images/middle.gif"));
 	menuItem.setMnemonic(KeyEvent.VK_D);
+	menuItem.addActionListener(this);
 	menu.add(menuItem);
 
 	//a submenu
@@ -67,9 +70,11 @@ public class FrameDemo {
 	menuItem = new JMenuItem("An item in the submenu");
 	menuItem.setAccelerator(KeyStroke.getKeyStroke(
 						       KeyEvent.VK_2, ActionEvent.ALT_MASK));
+	menuItem.addActionListener(this);
 	submenu.add(menuItem);
 
 	menuItem = new JMenuItem("Another item");
+	menuItem.addActionListener(this);
 	submenu.add(menuItem);
 	menu.add(submenu);
 
@@ -82,7 +87,14 @@ public class FrameDemo {
 	
 	return menuBar;
     }
- 
+
+    public void actionPerformed(ActionEvent e) {
+	//...Get information from the action event...
+	//...Display it in the text area...
+	JMenuItem source = (JMenuItem)(e.getSource());
+        this.setVisible(false);
+	new FrmMain().setVisible(true);
+    }
     
     public static void main(String[] args) {
         //Schedule a job for the event-dispatching thread:
