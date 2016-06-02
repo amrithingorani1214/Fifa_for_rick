@@ -17,9 +17,9 @@ public class FrameDemo implements ActionListener {
 	frame.setJMenuBar(menuBar);
  
         JLabel emptyLabel = new JLabel("");
-        emptyLabel.setPreferredSize(new Dimension(175, 100));
+        emptyLabel.setPreferredSize(new Dimension(800, 500));
         frame.getContentPane().add(emptyLabel, BorderLayout.CENTER);
- 
+
         //Display the window.
         frame.pack();
         frame.setVisible(true);
@@ -42,26 +42,45 @@ public class FrameDemo implements ActionListener {
 	menuBar.add(menu);
 
 	//a group of JMenuItems
+	
 	menuItem = new JMenuItem("Roster",
 				 KeyEvent.VK_T);
 	menuItem.setAccelerator(KeyStroke.getKeyStroke(
 						       KeyEvent.VK_1, ActionEvent.ALT_MASK));
 	menuItem.getAccessibleContext().setAccessibleDescription(
 								 "This doesn't really do anything");
-	menuItem.addActionListener(this);
+	menuItem.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+		    // handle button ActionEvent & display dialog...
+		    System.out.println("Selected: " + e.getActionCommand());
+		}
+	});
 	menu.add(menuItem);
 
 	menuItem = new JMenuItem("Both text and icon",
 				 new ImageIcon("images/middle.gif"));
 	menuItem.setMnemonic(KeyEvent.VK_B);
-	menuItem.addActionListener(this);
+	menuItem.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+		    // handle button ActionEvent & display dialog...
+		    System.out.println("Selected: " + e.getActionCommand());
+		}
+	});
 	menu.add(menuItem);
 
 	menuItem = new JMenuItem(new ImageIcon("images/middle.gif"));
 	menuItem.setMnemonic(KeyEvent.VK_D);
-	menuItem.addActionListener(this);
+	menuItem.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+		    // handle button ActionEvent & display dialog...
+		    System.out.println("Selected: " + e.getActionCommand());
+		}
+	});
 	menu.add(menuItem);
-
+	/*
 	//a submenu
 	menu.addSeparator();
 	submenu = new JMenu("A submenu");
@@ -70,7 +89,13 @@ public class FrameDemo implements ActionListener {
 	menuItem = new JMenuItem("An item in the submenu");
 	menuItem.setAccelerator(KeyStroke.getKeyStroke(
 						       KeyEvent.VK_2, ActionEvent.ALT_MASK));
-	menuItem.addActionListener(this);
+	menuItem.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+		    // handle button ActionEvent & display dialog...
+		    System.out.println("Selected: " + e.getActionCommand());
+		}
+	});
 	submenu.add(menuItem);
 
 	menuItem = new JMenuItem("Another item");
@@ -84,16 +109,17 @@ public class FrameDemo implements ActionListener {
 	menu.getAccessibleContext().setAccessibleDescription(
             "This menu does nothing");
 	menuBar.add(menu);
-	
+	*/
 	return menuBar;
     }
 
     public void actionPerformed(ActionEvent e) {
 	//...Get information from the action event...
 	//...Display it in the text area...
-	JMenuItem source = (JMenuItem)(e.getSource());
-        this.setVisible(false);
-	new FrmMain().setVisible(true);
+	//	JMenuItem source = (JMenuItem)(e.getSource());
+	//        this.setVisible(false);
+	//	new FrmMain().setVisible(true);
+	System.out.println("Selected: " + e.getActionCommand());
     }
     
     public static void main(String[] args) {
