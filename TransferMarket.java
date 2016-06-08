@@ -14,7 +14,7 @@ public class TransferMarket{
    public static String getGoldAttack(){
       Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("GoldAttackers.txt");
+      File file = new File("res/GoldAttackers.txt");
       try {
          input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 34);
@@ -32,7 +32,7 @@ public class TransferMarket{
    public static String getGoldMidfield(){
       Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("GoldMidfielders.txt");
+      File file = new File("res/GoldMidfielders.txt");
       try {
          input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 123);
@@ -50,7 +50,7 @@ public class TransferMarket{
    public static String getGoldDefense(){
       Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("GoldDefenders.txt");
+      File file = new File("res/GoldDefenders.txt");
       try {
          input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 34);
@@ -68,7 +68,7 @@ public class TransferMarket{
    public static String getGoldGoalie(){
       Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("GoldGoalkeepers.txt");
+      File file = new File("res/GoldGoalkeepers.txt");
       try {
          input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 34);
@@ -90,7 +90,7 @@ public class TransferMarket{
    public static String getSilverAttack(){
       Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("SilverAttackers.txt");
+      File file = new File("res/SilverAttackers.txt");
       try {
          input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 34);
@@ -108,7 +108,7 @@ public class TransferMarket{
    public static String getSilverMidfield(){
       Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("SilverMidfielders.txt");
+      File file = new File("res/SilverMidfielders.txt");
       try {
          input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 46);
@@ -126,7 +126,7 @@ public class TransferMarket{
    public static String getSilverDefense(){
       Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("SilverDefenders.txt");
+      File file = new File("res/SilverDefenders.txt");
       try {
          input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 34);
@@ -144,7 +144,7 @@ public class TransferMarket{
    public static String getSilverGoalie(){
       Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("SilverGoalkeepers.txt");
+      File file = new File("res/SilverGoalkeepers.txt");
       try {
          input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 34);
@@ -166,7 +166,7 @@ public class TransferMarket{
    public static String getBronzeAttack(){
       Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("BronzeAttackers.txt");
+      File file = new File("res/BronzeAttackers.txt");
       try {
          input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 34);
@@ -184,7 +184,7 @@ public class TransferMarket{
    public static String getBronzeMidfield(){
       Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("BronzeMidfielders.txt");
+      File file = new File("res/BronzeMidfielders.txt");
       try {
          input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 34);
@@ -202,7 +202,7 @@ public class TransferMarket{
    public static String getBronzeDefense(){
       Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("BronzeDefenders.txt");
+      File file = new File("res/BronzeDefenders.txt");
       try {
          input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 34);
@@ -220,7 +220,7 @@ public class TransferMarket{
    public static String getBronzeGoalie(){
       Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("GoldGoalkeepers.txt");
+      File file = new File("res/GoldGoalkeepers.txt");
       try {
          input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 34);
@@ -610,7 +610,7 @@ public static Player BronzeGoalie(){
 public static void main(String[] args){
       System.out.println(GoldAttacker());
       System.out.println(GoldMidfielder());
-      System.out.println(SilverMidfielder());
+      //      System.out.println(SilverMidfielder());
 }
 
 }
