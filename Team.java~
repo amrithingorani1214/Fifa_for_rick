@@ -1,0 +1,36 @@
+public class Team {
+    
+    public ArrayList<Player> _roster;
+    public int _numGoalie;
+    public int _numDefend;
+    public int _numMid;
+    public int _numAtt;
+
+    public Team() {
+	_roster = new ArrayList<Player>;
+	_roster.add(TransferMarket.GoldGolie());
+	_numGoalie += 1;
+	_roster.add(TransferMarket.GoldDefender());
+	_roster.add(TransferMarket.GoldDefender());	
+	_roster.add(TransferMarket.GoldDefender());
+	_roster.add(TransferMarket.GoldDefender());
+	_numDefend += 4;
+	_roster.add(TransferMarket.GoldMidfielder());
+	_roster.add(TransferMarket.GoldMidfielder());
+	_roster.add(TransferMarket.GoldMidfielder());
+	_numMid += 3;
+	_roster.add(TransferMarket.GoldAttacker());
+	_roster.add(TransferMarket.GoldAttacker());
+	_roster.add(TransferMarket.GoldAttacker());
+	_numAtt += 3;
+
+	for (int i = 0; i < _numGoalie; i++) {
+	    FileWriter writer = new FileWriter(new File("res/GoldGoalkeepers.txt"));
+	    Player p = _roster.get(i);
+	    writer.write(p._name + " " + p._pos + " " + p._age + " " + p._attack + " " + p._defense + " " + p._overall);
+	    writer.flush();
+	    writer.close();
+	}
+    }
+    
+}
