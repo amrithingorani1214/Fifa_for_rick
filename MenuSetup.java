@@ -2,13 +2,27 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.Image;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class MenuSetup extends JFrame implements ActionListener{
-
+public static Player trainingplayer = new Player();
+public static  JComboBox jComboBox = new JComboBox();
+  
 public static void main (String[] args){
-
-
-
+        Driver._roster.add(new Player("Abbiatti", "G", 25, 90.0, 90.0, 90.0));
+Driver._roster.add(new Player("Pepe", "D", 25, 90.0, 90.0, 90.0));
+Driver._roster.add(new Player("Ramos", "D", 25, 90.0, 90.0, 90.0));
+Driver._roster.add(new Player("Alaba", "D", 25, 90.0, 90.0, 90.0));
+Driver._roster.add(new Player("Marquinhos", "D", 25, 90.0, 90.0, 90.0));
+Driver._roster.add(new Player("Kaka", "M", 25, 90.0, 90.0, 90.0));
+Driver._roster.add(new Player("Reus", "M", 25, 90.0, 90.0, 90.0));
+Driver._roster.add(new Player("Ozil", "M", 25, 90.0, 90.0, 90.0));
+Driver._roster.add(new Player("Messi", "A", 25, 90.0, 90.0, 90.0));
+Driver._roster.add(new Player("Ronaldo", "A", 25, 90.0, 90.0, 90.0));
+Driver._roster.add(new Player("Suarez", "A", 25, 90.0, 90.0, 90.0));
+  
+  
       JFrame.setDefaultLookAndFeelDecorated(true);
 
       MenuSetup frame = new MenuSetup();
@@ -171,6 +185,8 @@ static class Action2 implements ActionListener {
     panel.add(label);*/
   }
 }
+
+//TRAINING
 static class Action3 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
     JFrame frame4 = new JFrame("Ranking");
@@ -185,22 +201,83 @@ static class Action3 implements ActionListener {
 }
 static class Action4 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-    JFrame frame5 = new JFrame("Training");
-    frame5.setVisible(true);
-    frame5.setSize(400,400);
-
-    JLabel label = new JLabel("Click here");
+    
+    
+    JFrame frame13 = new JFrame("Training");
+        frame13.setVisible(true);
+    frame13.setSize(400,400);
+   
     JPanel panel = new JPanel();
-    frame5.add(panel);
-    panel.add(label);
+    
+   jComboBox = new JComboBox();
+    for (Player a : Driver._roster) {
+      if (a._pos.equals("A")) {
+        jComboBox.addItem(a._name + " | " + a._age + "yrs | " + a._attack);
+      }
+          if (a._pos.equals("M")) {
+        jComboBox.addItem(a._name + " | " + a._age + "yrs | " + a._overall);
+      }
+              if (a._pos.equals("D")) {
+        jComboBox.addItem(a._name + " | " + a._age + "yrs | " + a._defense);
+      }
+                  if (a._pos.equals("G")) {
+        jComboBox.addItem(a._name + " | " + a._age + "yrs | " + a._defense);
+      }
+                     
+    }          
+       jComboBox.setBounds(100, 260, 150, 50);
+    panel.add(jComboBox);
+    
+ImageIcon warnIcon13 = new ImageIcon("attacktrain.png");
+    Image icon13 = warnIcon13.getImage();
+    Image warnIconnew13 = icon13.getScaledInstance(60, 60, java.awt.Image.SCALE_SMOOTH);
+    Icon final13 = new ImageIcon(warnIconnew13);
+    JButton button13 = new JButton(final13);
+    button13.setText("Train Player");
+    button13.addActionListener(new Action21());
+    
+
+ /*   ImageIcon warnIcon14 = new ImageIcon("midtrain.png");
+    Image icon14 = warnIcon14.getImage();
+    Image warnIconnew14 = icon14.getScaledInstance(60, 60, java.awt.Image.SCALE_SMOOTH);
+    Icon final14 = new ImageIcon(warnIconnew14);
+    JButton button14 = new JButton(final14);
+    button14.setText("Train Midfielder");
+     button12.addActionListener(new Action22());
+    
+        ImageIcon warnIcon15 = new ImageIcon("deftrain.jpg");
+    Image icon15 = warnIcon15.getImage();
+    Image warnIconnew15 = icon15.getScaledInstance(60, 60, java.awt.Image.SCALE_SMOOTH);
+    Icon final15 = new ImageIcon(warnIconnew15);
+    JButton button15 = new JButton(final15);
+    button15.setText("Train Defender");
+     button12.addActionListener(new Action23());
+    
+      ImageIcon warnIcon16 = new ImageIcon("goaltrain.jpg");
+    Image icon16 = warnIcon16.getImage();
+    Image warnIconnew16 = icon16.getScaledInstance(60, 60, java.awt.Image.SCALE_SMOOTH);
+    Icon final16 = new ImageIcon(warnIconnew16);
+    JButton button16 = new JButton(final16);
+    button16.setText("Train Goalkeeper");
+     button12.addActionListener(new Action24());
+ */   
+    panel.add(button13);
+    /*
+    panel.add(button14);
+    panel.add(button15);
+    panel.add(button16);
+    */
+panel.setVisible(true);
+frame13.add(panel);
   }
 }
+
 static class Action5 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
     JFrame frame6 = new JFrame("Training");
     frame6.setVisible(true);
     frame6.setSize(400,400);
-
+    
     JLabel label = new JLabel("Click here");
     JPanel panel = new JPanel();
     frame6.add(panel);
@@ -291,6 +368,7 @@ static class Action82 implements ActionListener {
   Driver.MyTeamAttackers.add(TransferMarket.BronzeAttacker());
   Driver.money -= 7500;
   }}
+
 static class Action103 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
   Driver.MyTeamAttackers.add(TransferMarket.GoldAttacker());
@@ -309,6 +387,46 @@ static class Action83 implements ActionListener {
   Driver.money -= 7500;
   }}
 
+static class Action21 implements ActionListener {
+  public void actionPerformed (ActionEvent e) {
+    String cmboitem = (String) jComboBox.getSelectedItem();
+    int place = 0;
+    for (Player b : Driver._roster) {
+      if (b._name.equals(cmboitem.substring(0, cmboitem.indexOf(" ")))){
+       place = Driver._roster.indexOf(b); 
+      }
+    }
+  // trainingplayer = Driver._roster.get(place);
+
+    if (Driver._roster.get(place)._pos.equals("A")) {
+  Training.UpgradeAttack(Driver._roster.get(place));
+    }
+    if (Driver._roster.get(place)._pos.equals("M")) {
+  Training.UpgradeMidfield(Driver._roster.get(place));
+    }
+    if (Driver._roster.get(place)._pos.equals("D")) {
+  Training.UpgradeDefense(Driver._roster.get(place));
+    }
+    if (Driver._roster.get(place)._pos.equals("G")) {
+  Training.UpgradeGoalie(Driver._roster.get(place));
+    }
+    
+    JOptionPane.showMessageDialog(null, Driver._roster.get(place)._name + " has been trained!" + Driver._roster.get(place)._defense);
+  }
+}
+/*static class Action21 implements ActionListener {
+  public void actionPerformed (ActionEvent e) {
+  Training.UpgradeMidfield();
+  }}
+static class Action22 implements ActionListener {
+  public void actionPerformed (ActionEvent e) {
+  Training.UpgradeDefense();
+  }}
+static class Action23 implements ActionListener {
+  public void actionPerformed (ActionEvent e) {
+  Training.UpgradeGoalie();
+  }}
+*/
 public void actionPerformed(ActionEvent e) {
     if (!true) {
 
