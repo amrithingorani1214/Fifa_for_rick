@@ -7,9 +7,9 @@ public class Player{
    public int _assists;
    public boolean _suspended;
    public boolean _injury;
-   public int _attack;
-   public int _defense;
-   public int _overall;
+   public double _attack;
+   public double _defense;
+   public double _overall;
 
    public Player(){
       _name = "";
@@ -37,6 +37,18 @@ public class Player{
       _overall = overall;
    }
    */
+
+   public static void setAttack(double attack){
+      _attack += attack;
+   }
+
+   public static void setDefense(double defense){
+      _defense += defense;
+   }
+
+   public static void setOverall(double overall){
+      _overall += overall;
+   }
 
    public String toString(){
       return "Name : " + _name + "  Position : " + _pos + " Attack : " + _attack + " Defense : " + _defense + " Overall : " + _overall;
