@@ -1,5 +1,5 @@
-  import javax.swing.*;
-  import java.awt.*;
+import javax.swing.*;
+import java.awt.*;
 import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,6 +9,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import java.util.ArrayList;
+import java.io.*;
 
 public class Driver extends JFrame {
   
@@ -81,7 +82,7 @@ public class Driver extends JFrame {
   public static int CompTeam5draws= 0;
 */
   
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
     setupteams();
   }
   

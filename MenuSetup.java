@@ -4,12 +4,13 @@ import java.awt.event.*;
 import java.awt.Image;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import java.io.*;
 
 public class MenuSetup extends JFrame implements ActionListener{
 public static Player trainingplayer = new Player();
 public static  JComboBox jComboBox = new JComboBox();
   
-public static void main (String[] args){
+public static void main (String[] args) { 
         Driver._roster.add(new Player("Abbiatti", "G", 25, 90.0, 90.0, 90.0));
 Driver._roster.add(new Player("Pepe", "D", 25, 90.0, 90.0, 90.0));
 Driver._roster.add(new Player("Ramos", "D", 25, 90.0, 90.0, 90.0));
@@ -317,77 +318,139 @@ public JMenuBar createMenuBar() {
 
 static class Action100 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-  Driver.MyTeamAttackers.add(TransferMarket.GoldAttacker());
+ try {     Driver.MyTeam.merge(0,0,0,0,0,0,0,0,0,0,0,1);
+        
+     } catch (IOException z) { 
+            // This block is to catch divide-by-zero error
+            System.out.println("");
+       }
+
   Driver.money -= 20000;
   }}
 
 static class Action90 implements ActionListener {
-  public void actionPerformed (ActionEvent e) {
-  Driver.MyTeamAttackers.add(TransferMarket.SilverAttacker());
+  public void actionPerformed(ActionEvent e) {
+   try {     Driver.MyTeam.merge(0,0,0,0,0,0,0,0,0,0,1,0);
+        
+     } catch (IOException z) { 
+            // This block is to catch divide-by-zero error
+            System.out.println("");
+       }
   Driver.money -= 14000;
   }}
 
 static class Action80 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-  Driver.MyTeamAttackers.add(TransferMarket.BronzeAttacker());
+   try {     Driver.MyTeam.merge(0,0,0,0,0,0,0,0,0,1,0,0);
+        
+     } catch (IOException z) { 
+            // This block is to catch divide-by-zero error
+            System.out.println("");
+       }
   Driver.money -= 7500;
   }}
 
 static class Action101 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-  Driver.MyTeamAttackers.add(TransferMarket.GoldAttacker());
+   try {     Driver.MyTeam.merge(0,0,0,0,0,0,0,0,1,0,0,0);
+        
+     } catch (IOException z) { 
+            // This block is to catch divide-by-zero error
+            System.out.println("");
+       }
   Driver.money -= 20000;
   }}
 
 static class Action91 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-  Driver.MyTeamAttackers.add(TransferMarket.SilverAttacker());
+   try {     Driver.MyTeam.merge(0,0,0,0,0,0,0,1,0,0,0,0);
+        
+     } catch (IOException z) { 
+            // This block is to catch divide-by-zero error
+            System.out.println("");
+       }
   Driver.money -= 14000;
   }}
 
 static class Action81 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-  Driver.MyTeamAttackers.add(TransferMarket.BronzeAttacker());
+   try {     Driver.MyTeam.merge(0,0,0,0,0,0,1,0,0,0,0,0);
+        
+     } catch (IOException z) { 
+            // This block is to catch divide-by-zero error
+            System.out.println("");
+       }
   Driver.money -= 7500;
   }}
 
 static class Action102 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-  Driver.MyTeamAttackers.add(TransferMarket.GoldAttacker());
+  try {     Driver.MyTeam.merge(0,0,0,0,0,1,0,0,0,0,0,0);
+        
+     } catch (IOException z) { 
+            // This block is to catch divide-by-zero error
+            System.out.println("");
+       }
   Driver.money -= 20000;
   }}
 
 static class Action92 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-  Driver.MyTeamAttackers.add(TransferMarket.SilverAttacker());
+   try {     Driver.MyTeam.merge(0,0,0,0,1,0,0,0,0,0,0,0);
+        
+     } catch (IOException z) { 
+            // This block is to catch divide-by-zero error
+            System.out.println("");
+       }
   Driver.money -= 14000;
   }}
 
 static class Action82 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-  Driver.MyTeamAttackers.add(TransferMarket.BronzeAttacker());
+   try {     Driver.MyTeam.merge(0,0,0,1,0,0,0,0,0,0,0,0);
+        
+     } catch (IOException z) { 
+            // This block is to catch divide-by-zero error
+            System.out.println("");
+       }
   Driver.money -= 7500;
   }}
 
 static class Action103 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-  Driver.MyTeamAttackers.add(TransferMarket.GoldAttacker());
+   try {     Driver.MyTeam.merge(0,0,1,0,0,0,0,0,0,0,0,0);
+        
+     } catch (IOException z) { 
+            // This block is to catch divide-by-zero error
+            System.out.println("");
+       }
   Driver.money -= 20000;
   }}
 
 static class Action93 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-  Driver.MyTeamAttackers.add(TransferMarket.SilverAttacker());
+   try {     Driver.MyTeam.merge(0,1,0,0,0,0,0,0,0,0,0,0);
+        
+     } catch (IOException z) { 
+            // This block is to catch divide-by-zero error
+            System.out.println("");
+       }
   Driver.money -= 14000;
   }}
 
 static class Action83 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-  Driver.MyTeamAttackers.add(TransferMarket.BronzeAttacker());
+   try {     Driver.MyTeam.merge(1,0,0,0,0,0,0,0,0,0,0,0);
+        
+     } catch (IOException z) { 
+            // This block is to catch divide-by-zero error
+            System.out.println("");
+       }
   Driver.money -= 7500;
   }}
 
 static class Action21 implements ActionListener {
+
   public void actionPerformed (ActionEvent e) {
     String cmboitem = (String) jComboBox.getSelectedItem();
     int place = 0;
