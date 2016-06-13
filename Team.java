@@ -203,6 +203,7 @@ public class Team {
 
 /********************Adding Players back to text file******************/
 
+<<<<<<< HEAD
 		for (int i = 0; i < _numGoalie; i++) {
 		    Player p = _roster.get(i);
 			FileWriter writer;

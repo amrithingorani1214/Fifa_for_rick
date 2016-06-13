@@ -11,6 +11,10 @@ public static Player trainingplayer = new Player();
 public static  JComboBox jComboBox = new JComboBox();
   
 public static void main (String[] args) { 
+<<<<<<< HEAD
+=======
+  /*
+>>>>>>> master
         Driver._roster.add(new Player("Abbiatti", "G", 25, 90.0, 90.0, 90.0));
 Driver._roster.add(new Player("Pepe", "D", 25, 90.0, 90.0, 90.0));
 Driver._roster.add(new Player("Ramos", "D", 25, 90.0, 90.0, 90.0));
@@ -22,9 +26,21 @@ Driver._roster.add(new Player("Ozil", "M", 25, 90.0, 90.0, 90.0));
 Driver._roster.add(new Player("Messi", "A", 25, 90.0, 90.0, 90.0));
 Driver._roster.add(new Player("Ronaldo", "A", 25, 90.0, 90.0, 90.0));
 Driver._roster.add(new Player("Suarez", "A", 25, 90.0, 90.0, 90.0));
+<<<<<<< HEAD
   
   
       JFrame.setDefaultLookAndFeelDecorated(true);
+=======
+*/
+  
+  
+     
+  
+}
+
+public static void running() {
+  JFrame.setDefaultLookAndFeelDecorated(true);
+>>>>>>> master
 
       MenuSetup frame = new MenuSetup();
 
@@ -48,9 +64,9 @@ Driver._roster.add(new Player("Suarez", "A", 25, 90.0, 90.0, 90.0));
   button4.addActionListener (new Action4());
   JButton button5 = new JButton("Roster");
   panel.add(button5);
-  button5.addActionListener (new Action5());
-  
+  button5.addActionListener (new Action5()); 
 }
+
 static class Action1 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
     JFrame frame2 = new JFrame("Transfer Market");
@@ -275,14 +291,20 @@ frame13.add(panel);
 
 static class Action5 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-    JFrame frame6 = new JFrame("Training");
+    Roster.running();
+    /*JFrame frame6 = new JFrame("Roster");
     frame6.setVisible(true);
     frame6.setSize(400,400);
     
+<<<<<<< HEAD
     JLabel label = new JLabel("Click here");
+=======
+    
+>>>>>>> master
     JPanel panel = new JPanel();
     frame6.add(panel);
     panel.add(label);
+    */
   }
 }
 

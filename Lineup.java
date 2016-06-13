@@ -16,13 +16,24 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
-
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class Lineup extends JApplet{
 
 public static void main(String[] args) {
     GlassView view = new GlassView(new ComboBoxes());
 }
+public static void runstuff() {
+   GlassView view = new GlassView(new ComboBoxes());
+}
+  
+
 
 private static class GlassView extends JFrame {
     private int width = 1000;
@@ -161,6 +172,23 @@ jComboBox3.setBounds(600, 80, 150, 50);
         JPanel controls = new JPanel();
         controls.setSize(150, 750);
         controls.setBackground(Color.WHITE);
+        
+        
+         String[] columns = new String[] {
+          "Player", "Rating"};
+         
+        //actual data for the table in a 2d array
+        Object[][] data = new Object[][] {
+          {"Messi", "98"},{"Ronaldo", "99"}
+        };
+ 
+        //create table with data
+        JTable table = new JTable(data, columns);
+         
+        //add the table to the frame
+        controls.add(table);
+         
+        table.setFont(new Font("Arial", Font.BOLD, 12));
         controls.setVisible(true);
 
         JSplitPane splitPane = new JSplitPane();
