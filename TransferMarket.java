@@ -69,9 +69,11 @@ public class TransferMarket{
       Scanner input = new Scanner(System.in);
       String line = "";
       File file = new File("res/GoldGoalkeepers.txt");
+      line += file.readLine();
+     
       try {
          input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 20);
+         int r = 1 + (int) (Math.random() * 10);
          while(r > 0){
             line = input.nextLine();
             r--;
@@ -347,7 +349,7 @@ public static Player GoldGoalie(){
    parse = parse.substring(index + 1);
 
    index = parse.indexOf(" ");
-   player._attack = Integer.parseInt(parse.substring(0,index));
+   player._attack = Double.parseDouble(parse.substring(0,index));
    parse = parse.substring(index + 1);
 
    index = parse.indexOf(" ");
