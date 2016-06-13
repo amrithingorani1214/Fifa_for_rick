@@ -11,10 +11,7 @@ public static Player trainingplayer = new Player();
 public static  JComboBox jComboBox = new JComboBox();
   
 public static void main (String[] args) { 
-<<<<<<< HEAD
-=======
   /*
->>>>>>> master
         Driver._roster.add(new Player("Abbiatti", "G", 25, 90.0, 90.0, 90.0));
 Driver._roster.add(new Player("Pepe", "D", 25, 90.0, 90.0, 90.0));
 Driver._roster.add(new Player("Ramos", "D", 25, 90.0, 90.0, 90.0));
@@ -26,11 +23,6 @@ Driver._roster.add(new Player("Ozil", "M", 25, 90.0, 90.0, 90.0));
 Driver._roster.add(new Player("Messi", "A", 25, 90.0, 90.0, 90.0));
 Driver._roster.add(new Player("Ronaldo", "A", 25, 90.0, 90.0, 90.0));
 Driver._roster.add(new Player("Suarez", "A", 25, 90.0, 90.0, 90.0));
-<<<<<<< HEAD
-  
-  
-      JFrame.setDefaultLookAndFeelDecorated(true);
-=======
 */
   
   
@@ -40,7 +32,6 @@ Driver._roster.add(new Player("Suarez", "A", 25, 90.0, 90.0, 90.0));
 
 public static void running() {
   JFrame.setDefaultLookAndFeelDecorated(true);
->>>>>>> master
 
       MenuSetup frame = new MenuSetup();
 
@@ -296,11 +287,6 @@ static class Action5 implements ActionListener {
     frame6.setVisible(true);
     frame6.setSize(400,400);
     
-<<<<<<< HEAD
-    JLabel label = new JLabel("Click here");
-=======
-    
->>>>>>> master
     JPanel panel = new JPanel();
     frame6.add(panel);
     panel.add(label);
