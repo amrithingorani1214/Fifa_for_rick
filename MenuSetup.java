@@ -287,7 +287,6 @@ static class Action5 implements ActionListener {
     frame6.setVisible(true);
     frame6.setSize(400,400);
     
-    
     JPanel panel = new JPanel();
     frame6.add(panel);
     panel.add(label);

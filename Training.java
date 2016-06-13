@@ -25,7 +25,7 @@ public class Training{
       else if (p._age >= 20 && p._age < 30)
          upgrade = 0.25 + ((int) (Math.random() * 3)) * 0.5;
       else upgrade = ((int) (Math.random() * 5)) * 0.2;
-      p._defense += upgrade;
+      p.setDefense(upgrade);
       return "Your player's defense increased by " + upgrade + "!";
    }
 

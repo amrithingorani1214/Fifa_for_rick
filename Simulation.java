@@ -22,7 +22,7 @@ public class Simulation {
   //12: Trick, get past defender, goalie stops it, SAVE, corner kick, delivers corner, shot, GOAL
   //13: Pass,...
   
-    public static String gamerun(String team1name, ArrayList<Player> team1, String team2name, ArrayList<Player> team2,Player freekicktaker1, Player freekicktaker2,
+    public static String gamerun(String team1name, Team team1, String team2name, Team team2,Player freekicktaker1, Player freekicktaker2,
                                 Player cornerkicktaker1, Player cornerkicktaker2, Player penaltytaker1, Player penaltytaker2) {
       //4-3-3 lineup
       ArrayList<Player> yellowcarded = new ArrayList<Player>();
@@ -34,56 +34,56 @@ public class Simulation {
       String matchday = "";
       while (minute <= 90) {
          if ((minute > 45 ) && (minute < 50)) {
-          matchday += "The referee blows the whistle for half-time. The players head back to the dressing rooms for a little tea break. \n";
-          matchday += "HALFTIME SCORE: " + score1 + " to " + score2 + ". \n";
-          int difference = score1 - score2;
-          if (difference >= 5) {
-          matchday += team1name + " are cruising to victory! \n";
-          }
-          if (difference <= -5) {
-          matchday += team2name + " are cruising to victory! \n";
-          }
-          if ((difference > 0) && (difference < 2)) {
-          matchday += team1name + " have a slight advantage over " + team2name + " as we start up again. \n";
-          }
-          if ((difference < 0) && (difference > -2)) {
-          matchday += team2name + " have a slight advantage over " + team1name + " as we start up again. \n";
-          }
-          if ((difference > 2) && (difference < 5)) {
-          matchday += team1name + " looks like the have it in the bag but we still have 45 minutes left to play. Anything can happen! \n";
-          }
-          if ((difference < -2) && (difference > -5)) {
-          matchday += team2name + " looks like the have it in the bag but we still have 45 minutes left to play. Anything can happen! \n";
-          }
+          	matchday += "The referee blows the whistle for half-time. The players head back to the dressing rooms for a little tea break. \n";
+          	matchday += "HALFTIME SCORE: " + score1 + " to " + score2 + ". \n";
+          	int difference = score1 - score2;
+          	if (difference >= 5) {
+          		matchday += team1name + " are cruising to victory! \n";
+          	}
+          	if (difference <= -5) {
+          		matchday += team2name + " are cruising to victory! \n";
+          	}
+          	if ((difference > 0) && (difference < 2)) {
+          		matchday += team1name + " have a slight advantage over " + team2name + " as we start up again. \n";
+          	}
+          	if ((difference < 0) && (difference > -2)) {
+          		matchday += team2name + " have a slight advantage over " + team1name + " as we start up again. \n";
+          	}
+          	if ((difference > 2) && (difference < 5)) {
+          		matchday += team1name + " looks like the have it in the bag but we still have 45 minutes left to play. Anything can happen! \n";
+          	}
+          	if ((difference < -2) && (difference > -5)) {
+          		matchday += team2name + " looks like the have it in the bag but we still have 45 minutes left to play. Anything can happen! \n";
+         	}
         }
-      double situation = Math.random();
-      double possession = Math.random();
-      if (possession <.5) {pos = 0;}
-      else {pos = 1;}
-      double ballcontrol = Math.random();
-      Player withball = new Player();
-      Player beforeball = new Player();
-      if (pos == 0) {
-        if (ballcontrol <.2) {
-          withball = pickdefense(team1);
-          beforeball = pickdefensemid(team1);
-        }
-        if (ballcontrol > .6) {
-         withball = pickattack(team1);
-         beforeball = pickmidattack(team1);
-         if ((ballcontrol >.2) && (ballcontrol <.6)) {
-           withball = pickmid(team1);
-           beforeball = pickdefensemid(team1);
-           }
-        }
-      }
-            if (pos == 1) {
-        if (ballcontrol <.2) {
-          withball = pickdefense(team2);
-          beforeball = pickdefensemid(team1);
-        }
-        if (ballcontrol > .6) {
-         withball = pickattack(team2);
+      	double situation = Math.random();
+      	double possession = Math.random();
+      	if (possession <.5) {pos = 0;}
+      	else {pos = 1;}
+      	double ballcontrol = Math.random();
+      	Player withball = new Player();
+      	Player beforeball = new Player();
+      	if (pos == 0) {
+        	if (ballcontrol <.2) {
+          		withball = pickdefense(team1);
+          		beforeball = pickdefensemid(team1);
+        	}
+        	if (ballcontrol > .6) {
+         		withball = pickattack(team1);
+         		beforeball = pickmidattack(team1);
+         		if ((ballcontrol >.2) && (ballcontrol <.6)) {
+           			withball = pickmid(team1);
+           			beforeball = pickdefensemid(team1);
+           		}
+        	}
+      	}	
+        if (pos == 1) {
+        	if (ballcontrol <.2) {
+          		withball = pickdefense(team2);
+          		beforeball = pickdefensemid(team1);
+        	}
+        	if (ballcontrol > .6) {
+         		withball = pickattack(team2);
          beforeball = pickmidattack(team1);
          if ((ballcontrol >.2) && (ballcontrol <.6)) {
            withball = pickmid(team2);
@@ -1586,19 +1586,19 @@ public class Simulation {
     return trickList.get(number);
   }
   public static Player pickattack(ArrayList<Player> team) {
-    return team.get(8+(int) (Math.random() *3));
+    return team._roster.get(8+(int) (Math.random() *3));
   }
    public static Player pickdefense(ArrayList<Player> team) {
-    return team.get(1+(int) (Math.random() *4));
+    return team._roster.get(1+(int) (Math.random() *4));
   }
     public static Player pickmid(ArrayList<Player> team) {
-    return team.get(5+(int) (Math.random() *3));
+    return team._roster.get(5+(int) (Math.random() *3));
   }
         public static Player pickdefensemid(ArrayList<Player> team) {
-    return team.get(1+(int) (Math.random() *7));
+    return team._roster.get(1+(int) (Math.random() *7));
   }
                 public static Player pickmidattack(ArrayList<Player> team) {
-    return team.get(5+(int) (Math.random() *6));
+    return team._roster.get(5+(int) (Math.random() *6));
   }
   
   public static String suffix(int num) {

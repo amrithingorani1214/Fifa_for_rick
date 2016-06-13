@@ -87,16 +87,16 @@ public class Driver extends JFrame {
   }
   
   public static void setupteams() throws IOException {
-    
-   MyTeam = new Team("My Team",0,0,0,0,0,0,0,0,0,0,0,0);
-  CompTeam1 = new Team("De Godenzonen",0,0,0,0,0,0,0,0,0,0,0,0);
-  CompTeam2 = new Team("Tractor Boys",0,0,0,0,0,0,0,0,0,0,0,0);
-  CompTeam3 = new Team("The Magical Magyars",0,0,0,0,0,0,0,0,0,0,0,0);
-  CompTeam4 = new Team("The Indomitable Lions",0,0,0,0,0,0,0,0,0,0,0,0);
-  CompTeam5 = new Team("Socceroos",0,0,0,0,0,0,0,0,0,0,0,0);
+		  
+  	MyTeam = new Team("My Team",0,0,0,0,0,0,0,0,0,0,0,0);
+ 	CompTeam1 = new Team("De Godenzonen",0,0,0,0,0,0,0,0,0,0,0,0);
+ 	CompTeam2 = new Team("Tractor Boys",0,0,0,0,0,0,0,0,0,0,0,0);
+ 	CompTeam3 = new Team("The Magical Magyars",0,0,0,0,0,0,0,0,0,0,0,0);
+ 	CompTeam4 = new Team("The Indomitable Lions",0,0,0,0,0,0,0,0,0,0,0,0);
+ 	CompTeam5 = new Team("Socceroos",0,0,0,0,0,0,0,0,0,0,0,0);
 
-   //4,5,2
- CompTeam1.merge(0,0,1,1,3,0,1,2,0,0,0,3);
+	  //4,5,2
+	CompTeam1.merge(0,0,1,1,3,0,1,2,0,0,0,3);
 /*
   CompTeam1.add(TransferMarket.GoldGoalie());
   CompTeam1.add(TransferMarket.SilverDefender());
@@ -111,8 +111,8 @@ public class Driver extends JFrame {
   CompTeam1.add(TransferMarket.GoldAttacker()); 
 */
 
- //1,6,4
- CompTeam2.merge(0,1,0,2,2,0,1,2,0,1,1,1);
+	//1,6,4
+	CompTeam2.merge(0,1,0,2,2,0,1,2,0,1,1,1);
 /*
    CompTeam2.add(TransferMarket.SilverGoalie());
   CompTeam2.add(TransferMarket.BronzeDefender());
@@ -127,9 +127,9 @@ public class Driver extends JFrame {
   CompTeam2.add(TransferMarket.BronzeAttacker());
 */
 
- //4,1,6
- CompTeam3.merge(0,1,0,0,0,4,3,0,0,3,0,0);
- /*
+	//4,1,6
+	CompTeam3.merge(0,1,0,0,0,4,3,0,0,3,0,0);
+	/*
      CompTeam3.add(TransferMarket.SilverGoalie());
   CompTeam3.add(TransferMarket.GoldDefender());
   CompTeam3.add(TransferMarket.GoldDefender());
@@ -141,11 +141,11 @@ public class Driver extends JFrame {
   CompTeam3.add(TransferMarket.BronzeAttacker());
   CompTeam3.add(TransferMarket.BronzeAttacker());
   CompTeam3.add(TransferMarket.BronzeAttacker());
-   */
+  	*/
   
- //6,0,5
- CompTeam4.merge(1,0,0,4,0,0,0,0,3,0,0,3);
- /*
+	//6,0,5
+	CompTeam4.merge(1,0,0,4,0,0,0,0,3,0,0,3);
+	/*
        CompTeam4.add(TransferMarket.BronzeGoalie());
   CompTeam4.add(TransferMarket.BronzeDefender());
   CompTeam4.add(TransferMarket.BronzeDefender());
@@ -157,11 +157,11 @@ public class Driver extends JFrame {
   CompTeam4.add(TransferMarket.GoldAttacker());
   CompTeam4.add(TransferMarket.GoldAttacker());
   CompTeam4.add(TransferMarket.GoldAttacker());
- */
+	*/
 
- //0,11,0
- CompTeam5.merge(0,1,0,0,4,0,0,3,0,0,3,0);
- /*
+	//0,11,0
+	CompTeam5.merge(0,1,0,0,4,0,0,3,0,0,3,0);
+	/*
          CompTeam5.add(TransferMarket.SilverGoalie());
   CompTeam5.add(TransferMarket.SilverDefender());
   CompTeam5.add(TransferMarket.SilverDefender());
@@ -173,7 +173,8 @@ public class Driver extends JFrame {
   CompTeam5.add(TransferMarket.SilverAttacker());
   CompTeam5.add(TransferMarket.SilverAttacker());
   CompTeam5.add(TransferMarket.SilverAttacker());
-   */
+  	*/
+    
    MenuSetup.running(); 
   }
 }
