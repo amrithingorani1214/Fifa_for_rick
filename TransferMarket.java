@@ -608,6 +608,7 @@ public static Player BronzeGoalie(){
 }
 
 public static void main(String[] args){
+  String hi = args[0];
       System.out.println(GoldAttacker());
       System.out.println(GoldMidfielder());
       //      System.out.println(SilverMidfielder());
