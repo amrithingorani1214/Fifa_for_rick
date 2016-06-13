@@ -17,7 +17,7 @@ public class TransferMarket{
       File file = new File("res/GoldAttackers.txt");
       try {
          input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 34);
+         int r = 1 + (int) (Math.random() * 81);
          while(r > 0){
             line = input.nextLine();
             r--;
@@ -35,7 +35,7 @@ public class TransferMarket{
       File file = new File("res/GoldMidfielders.txt");
       try {
          input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 123);
+         int r = 1 + (int) (Math.random() * 122);
          while(r > 0){
             line = input.nextLine();
             r--;
@@ -53,7 +53,7 @@ public class TransferMarket{
       File file = new File("res/GoldDefenders.txt");
       try {
          input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 34);
+         int r = 1 + (int) (Math.random() * 71);
          while(r > 0){
             line = input.nextLine();
             r--;
@@ -71,7 +71,7 @@ public class TransferMarket{
       File file = new File("res/GoldGoalkeepers.txt");
       try {
          input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 34);
+         int r = 1 + (int) (Math.random() * 20);
          while(r > 0){
             line = input.nextLine();
             r--;
@@ -93,7 +93,7 @@ public class TransferMarket{
       File file = new File("res/SilverAttackers.txt");
       try {
          input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 34);
+         int r = 1 + (int) (Math.random() * 360);
          while(r > 0){
             line = input.nextLine();
             r--;
@@ -111,7 +111,7 @@ public class TransferMarket{
       File file = new File("res/SilverMidfielders.txt");
       try {
          input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 46);
+         int r = 1 + (int) (Math.random() * 569);
          while(r > 0){
             line = input.nextLine();
             r--;
@@ -129,7 +129,7 @@ public class TransferMarket{
       File file = new File("res/SilverDefenders.txt");
       try {
          input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 34);
+         int r = 1 + (int) (Math.random() * 450);
          while(r > 0){
             line = input.nextLine();
             r--;
@@ -147,7 +147,7 @@ public class TransferMarket{
       File file = new File("res/SilverGoalkeepers.txt");
       try {
          input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 34);
+         int r = 1 + (int) (Math.random() * 122);
          while(r > 0){
             line = input.nextLine();
             r--;
@@ -169,7 +169,7 @@ public class TransferMarket{
       File file = new File("res/BronzeAttackers.txt");
       try {
          input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 34);
+         int r = 1 + (int) (Math.random() * 416);
          while(r > 0){
             line = input.nextLine();
             r--;
@@ -187,7 +187,7 @@ public class TransferMarket{
       File file = new File("res/BronzeMidfielders.txt");
       try {
          input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 34);
+         int r = 1 + (int) (Math.random() * 555);
          while(r > 0){
             line = input.nextLine();
             r--;
@@ -205,7 +205,7 @@ public class TransferMarket{
       File file = new File("res/BronzeDefenders.txt");
       try {
          input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 34);
+         int r = 1 + (int) (Math.random() * 488);
          while(r > 0){
             line = input.nextLine();
             r--;
@@ -223,7 +223,7 @@ public class TransferMarket{
       File file = new File("res/GoldGoalkeepers.txt");
       try {
          input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 34);
+         int r = 1 + (int) (Math.random() * 183);
          while(r > 0){
             line = input.nextLine();
             r--;
@@ -608,9 +608,9 @@ public static Player BronzeGoalie(){
 }
 
 public static void main(String[] args){
-  String hi = args[0];
-      System.out.println(GoldAttacker());
-      System.out.println(GoldMidfielder());
+      //      String hi = args[0];
+      //      System.out.println(GoldAttacker());
+      //      System.out.println(GoldMidfielder());
       //      System.out.println(SilverMidfielder());
 }
 
