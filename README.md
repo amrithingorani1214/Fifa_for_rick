@@ -1,16 +1,1 @@
-# Fifa_for_rick
-
-##Basic Github Cloning Instructions
-```sh
-  $ git clone "Insert HTTPS Link Here"
-```
-
-##Basic Github Pushing Instructions
-```sh
-  $ git pull 
-  $ git add --all
-  $ git commit -m "Insert Message Here"
-  $ git push
-```
-Framework from http://www.gametutorial.net/article/Java-game-framework
-More tutorials http://www.kilobolt.com/game-development-tutorial.html
+Our objective for the project was to create a game that would simulate a game of football (soccer) using text. We were inspired by the Fifa game which has a simulation mode, and we tried to emulate it as much as we could. We made it possible to have computer opponents to simulate gameplay more accurately. The game starts you off with a menu, which has several buttons to different screens. In the transfer market, you are able to buy players and assign them to your team. Each player quality is of different value so you have to budget your money wisely. The transfer market reads files which store over 3,000 unique players. Once a player is bought and assigned, that player is removed from the text file and goes to your team. Once you quit the game, every person on your squad and the computer’s squad go back to their respective files. Another button allows you to manage your team and who plays at what position. Using combination boxes, we can select a different player for each unique position. For simplification, everyone’s teams is in a 4-3-3 formation. That is, there is one goalie, 4 defenders, 3 midfielders, and 3 attackers. Each player has unique attributes, which are made in the player class. These attributes can be accessed by other classes and govern how a player performs during a game. The game itself is contained mainly in simulation. The class starts off with a new frame, and an event is printed. These events occur every couple of minutes and can vary from being a perfect pass, to a bad tackle, to a great save, and to a terrible strike. The player’s stats govern how well they do. If you want to make your team better, you have two options : buy a new random player, or train ones you already have. In the menu, you can choose to train one player from each position once per match i.e. one goalie, one defender, one midfielder, and one attacker may be trained. The amount they train and how their stats improve solely depends on the age of the player. Younger players train better and can improve their stats more quickly than older players. The driver class sets everything up and bonds all of the components together. To run the game, simply run the driver class.
