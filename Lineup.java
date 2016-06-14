@@ -29,6 +29,7 @@ public class Lineup extends JApplet{
 public static void main(String[] args) {
     GlassView view = new GlassView(new ComboBoxes());
 }
+
 public static void runstuff() {
    GlassView view = new GlassView(new ComboBoxes());
 }
@@ -50,11 +51,46 @@ private static class GlassView extends JFrame {
         glass.setVisible(true);
         glass.setLayout(null);
         
+        ArrayList<Player> Attackers = new ArrayList<Player>();
+        ArrayList<Player> Midfielders = new ArrayList<Player>();
+        ArrayList<Player> Defenders = new ArrayList<Player>();
+        ArrayList<Player> Goalkeepers = new ArrayList<Player>();
+        
+        for (int i = 0; i < Driver.MyTeam._roster.size(); i ++) {
+          if (Driver.MyTeam._roster.get(i)._pos.equals("A")) {
+
+            Attackers.add(Driver.MyTeam._roster.get(i));
+          }
+          if (Driver.MyTeam._roster.get(i)._pos.equals("M")) {
+            Midfielders.add(Driver.MyTeam._roster.get(i));
+          }
+          if (Driver.MyTeam._roster.get(i)._pos.equals("D")) {
+            Defenders.add(Driver.MyTeam._roster.get(i));
+          }
+          if (Driver.MyTeam._roster.get(i)._pos.equals("G")) {
+            Goalkeepers.add(Driver.MyTeam._roster.get(i));
+          }
+        }
+        while (Midfielders.size() > 0) {
+         Attackers.add(Midfielders.get(0));
+         Midfielders.remove(0);
+        }
+        while (Defenders.size() > 0) {
+         Attackers.add(Defenders.get(0));
+         Defenders.remove(0);
+        }
+        while (Goalkeepers.size() > 0) {
+         Attackers.add(Goalkeepers.get(0));
+         Goalkeepers.remove(0);
+        }
+        
+        
+        
            JComboBox jComboBox1 = new JComboBox();
-    jComboBox1.addItem("Messi");
-    jComboBox1.addItem("Ronaldo");
-    jComboBox1.addItem("Suarez");
-    jComboBox1.addItem("Neymar");
+           while (Attackers.size() > 0) {
+           jComboBox1.addItem(Attackers.get(0)._name);
+           Attackers.remove(0);
+           }
     Object cmboitem = jComboBox1.getSelectedItem();
     //System.out.println(cmboitem);
     jComboBox1.setBounds(100, 80, 150, 50);

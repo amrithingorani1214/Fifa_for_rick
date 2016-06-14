@@ -93,6 +93,7 @@ public class Roster extends JFrame
         while (Attackers.size() > 0) {
          data[placeholder / 10][placeholder % 10] = Attackers.get(0);
          Attackers.remove(0);
+          placeholder++;
         }
         
         
@@ -104,11 +105,14 @@ public class Roster extends JFrame
         this.add(new JScrollPane(table));
          
         this.setTitle("Table Example");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
-        this.pack();
-        this.setVisible(true);
+        //this.setSize(1000,1000);
+        //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
+        
         table.setBackground(Color.green);
         table.setFont(new Font("Arial", Font.BOLD, 12));
+        this.setMinimumSize(new Dimension(1000,1000));
+        this.pack();
+        this.setVisible(true);
     }
      
     public static void running() {

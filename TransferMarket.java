@@ -1,6 +1,10 @@
 import java.io.File;
 import java.io.*;
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class TransferMarket{
 
@@ -12,76 +16,182 @@ public class TransferMarket{
    //GOLD---------------------------------------------
    //-------------------------------------------------
    public static String getGoldAttack(){
-      Scanner input = new Scanner(System.in);
+      //Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("res/GoldAttackers.txt");
-      try {
-         input = new Scanner(file);
+ArrayList<String> lines = new ArrayList<String>();      
+//File file = new File("res/GoldGoalkeepers.txt");
+   
+       String fileName="GoldAttackers.txt";
+       try{
+
+          //Create object of FileReader
+          FileReader inputFile = new FileReader(fileName);
+
+          //Instantiate the BufferedReader Class
+          BufferedReader bufferReader = new BufferedReader(inputFile);
+
+          //Variable to hold the one line data
+          //String line;
+
+          // Read file line by line and print on the console
+          while ((line = bufferReader.readLine()) != null)   {
+            lines.add(line);
+          }
+          //Close the buffer reader
+          bufferReader.close();
+       }catch(Exception e){
+          System.out.println("Error while reading file line by line:" + e.getMessage());                      
+       }
+
+      
+      //try {
+         //input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 81);
-         while(r > 0){
-            line = input.nextLine();
-            r--;
-         }}
-         catch (FileNotFoundException ex) {
-            System.out.println("Error: File not found");
-         }
-         input.close();
+         line = lines.get(r);
+        // while(r > 0){
+            //line = input.nextLine();
+          //  r--;
+        // }
+   
+   //      catch (FileNotFoundException ex) {
+     //       System.out.println("Error: File not found");
+       //  }
+      //   input.close();
          return line;
    }
 
    public static String getGoldMidfield(){
-      Scanner input = new Scanner(System.in);
+      //Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("res/GoldMidfielders.txt");
-      try {
-         input = new Scanner(file);
+ArrayList<String> lines = new ArrayList<String>();      
+//File file = new File("res/GoldGoalkeepers.txt");
+   
+       String fileName="GoldMidfielders.txt";
+       try{
+
+          //Create object of FileReader
+          FileReader inputFile = new FileReader(fileName);
+
+          //Instantiate the BufferedReader Class
+          BufferedReader bufferReader = new BufferedReader(inputFile);
+
+          //Variable to hold the one line data
+          //String line;
+
+          // Read file line by line and print on the console
+          while ((line = bufferReader.readLine()) != null)   {
+            lines.add(line);
+          }
+          //Close the buffer reader
+          bufferReader.close();
+       }catch(Exception e){
+          System.out.println("Error while reading file line by line:" + e.getMessage());                      
+       }
+
+      
+      //try {
+         //input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 122);
-         while(r > 0){
-            line = input.nextLine();
-            r--;
-         }}
-         catch (FileNotFoundException ex) {
-            System.out.println("Error: File not found");
-         }
-         input.close();
+         line = lines.get(r);
+        // while(r > 0){
+            //line = input.nextLine();
+          //  r--;
+        // }
+   
+   //      catch (FileNotFoundException ex) {
+     //       System.out.println("Error: File not found");
+       //  }
+      //   input.close();
          return line;
    }
 
    public static String getGoldDefense(){
-      Scanner input = new Scanner(System.in);
+  //Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("res/GoldDefenders.txt");
-      try {
-         input = new Scanner(file);
+ArrayList<String> lines = new ArrayList<String>();      
+//File file = new File("res/GoldGoalkeepers.txt");
+   
+       String fileName="GoldDefenders.txt";
+       try{
+
+          //Create object of FileReader
+          FileReader inputFile = new FileReader(fileName);
+
+          //Instantiate the BufferedReader Class
+          BufferedReader bufferReader = new BufferedReader(inputFile);
+
+          //Variable to hold the one line data
+          //String line;
+
+          // Read file line by line and print on the console
+          while ((line = bufferReader.readLine()) != null)   {
+            lines.add(line);
+          }
+          //Close the buffer reader
+          bufferReader.close();
+       }catch(Exception e){
+          System.out.println("Error while reading file line by line:" + e.getMessage());                      
+       }
+
+      
+      //try {
+         //input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 71);
-         while(r > 0){
-            line = input.nextLine();
-            r--;
-         }}
-         catch (FileNotFoundException ex) {
-            System.out.println("Error: File not found");
-         }
-         input.close();
+         line = lines.get(r);
+        // while(r > 0){
+            //line = input.nextLine();
+          //  r--;
+        // }
+   
+   //      catch (FileNotFoundException ex) {
+     //       System.out.println("Error: File not found");
+       //  }
+      //   input.close();
          return line;
    }
 
    public static String getGoldGoalie(){
-      Scanner input = new Scanner(System.in);
+     //Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("res/GoldGoalkeepers.txt");
-      line += file.readLine();
-     
-      try {
-         input = new Scanner(file);
+ArrayList<String> lines = new ArrayList<String>();      
+//File file = new File("res/GoldGoalkeepers.txt");
+   
+       String fileName="GoldGoalkeepers.txt";
+       try{
+
+          //Create object of FileReader
+          FileReader inputFile = new FileReader(fileName);
+
+          //Instantiate the BufferedReader Class
+          BufferedReader bufferReader = new BufferedReader(inputFile);
+
+          //Variable to hold the one line data
+          //String line;
+
+          // Read file line by line and print on the console
+          while ((line = bufferReader.readLine()) != null)   {
+            lines.add(line);
+          }
+          //Close the buffer reader
+          bufferReader.close();
+       }catch(Exception e){
+          System.out.println("Error while reading file line by line:" + e.getMessage());                      
+       }
+
+      
+      //try {
+         //input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 10);
-         while(r > 0){
-            line = input.nextLine();
-            r--;
-         }}
-         catch (FileNotFoundException ex) {
-            System.out.println("Error: File not found");
-         }
-         input.close();
+         line = lines.get(r);
+        // while(r > 0){
+            //line = input.nextLine();
+          //  r--;
+        // }
+   
+   //      catch (FileNotFoundException ex) {
+     //       System.out.println("Error: File not found");
+       //  }
+      //   input.close();
          return line;
    }
 
@@ -90,74 +200,182 @@ public class TransferMarket{
    //-------------------------------------------------
 
    public static String getSilverAttack(){
-      Scanner input = new Scanner(System.in);
+      //Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("res/SilverAttackers.txt");
-      try {
-         input = new Scanner(file);
+ArrayList<String> lines = new ArrayList<String>();      
+//File file = new File("res/GoldGoalkeepers.txt");
+   
+       String fileName="SilverAttackers.txt";
+       try{
+
+          //Create object of FileReader
+          FileReader inputFile = new FileReader(fileName);
+
+          //Instantiate the BufferedReader Class
+          BufferedReader bufferReader = new BufferedReader(inputFile);
+
+          //Variable to hold the one line data
+          //String line;
+
+          // Read file line by line and print on the console
+          while ((line = bufferReader.readLine()) != null)   {
+            lines.add(line);
+          }
+          //Close the buffer reader
+          bufferReader.close();
+       }catch(Exception e){
+          System.out.println("Error while reading file line by line:" + e.getMessage());                      
+       }
+
+      
+      //try {
+         //input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 360);
-         while(r > 0){
-            line = input.nextLine();
-            r--;
-         }}
-         catch (FileNotFoundException ex) {
-            System.out.println("Error: File not found");
-         }
-         input.close();
+         line = lines.get(r);
+        // while(r > 0){
+            //line = input.nextLine();
+          //  r--;
+        // }
+   
+   //      catch (FileNotFoundException ex) {
+     //       System.out.println("Error: File not found");
+       //  }
+      //   input.close();
          return line;
    }
 
    public static String getSilverMidfield(){
-      Scanner input = new Scanner(System.in);
+   //Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("res/SilverMidfielders.txt");
-      try {
-         input = new Scanner(file);
+ArrayList<String> lines = new ArrayList<String>();      
+//File file = new File("res/GoldGoalkeepers.txt");
+   
+       String fileName="SilverMidfielders.txt";
+       try{
+
+          //Create object of FileReader
+          FileReader inputFile = new FileReader(fileName);
+
+          //Instantiate the BufferedReader Class
+          BufferedReader bufferReader = new BufferedReader(inputFile);
+
+          //Variable to hold the one line data
+          //String line;
+
+          // Read file line by line and print on the console
+          while ((line = bufferReader.readLine()) != null)   {
+            lines.add(line);
+          }
+          //Close the buffer reader
+          bufferReader.close();
+       }catch(Exception e){
+          System.out.println("Error while reading file line by line:" + e.getMessage());                      
+       }
+
+      
+      //try {
+         //input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 569);
-         while(r > 0){
-            line = input.nextLine();
-            r--;
-         }}
-         catch (FileNotFoundException ex) {
-            System.out.println("Error: File not found");
-         }
-         input.close();
+         line = lines.get(r);
+        // while(r > 0){
+            //line = input.nextLine();
+          //  r--;
+        // }
+   
+   //      catch (FileNotFoundException ex) {
+     //       System.out.println("Error: File not found");
+       //  }
+      //   input.close();
          return line;
    }
 
    public static String getSilverDefense(){
-      Scanner input = new Scanner(System.in);
+      //Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("res/SilverDefenders.txt");
-      try {
-         input = new Scanner(file);
+ArrayList<String> lines = new ArrayList<String>();      
+//File file = new File("res/GoldGoalkeepers.txt");
+   
+       String fileName="SilverDefenders.txt";
+       try{
+
+          //Create object of FileReader
+          FileReader inputFile = new FileReader(fileName);
+
+          //Instantiate the BufferedReader Class
+          BufferedReader bufferReader = new BufferedReader(inputFile);
+
+          //Variable to hold the one line data
+          //String line;
+
+          // Read file line by line and print on the console
+          while ((line = bufferReader.readLine()) != null)   {
+            lines.add(line);
+          }
+          //Close the buffer reader
+          bufferReader.close();
+       }catch(Exception e){
+          System.out.println("Error while reading file line by line:" + e.getMessage());                      
+       }
+
+      
+      //try {
+         //input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 450);
-         while(r > 0){
-            line = input.nextLine();
-            r--;
-         }}
-         catch (FileNotFoundException ex) {
-            System.out.println("Error: File not found");
-         }
-         input.close();
+         line = lines.get(r);
+        // while(r > 0){
+            //line = input.nextLine();
+          //  r--;
+        // }
+   
+   //      catch (FileNotFoundException ex) {
+     //       System.out.println("Error: File not found");
+       //  }
+      //   input.close();
          return line;
    }
 
    public static String getSilverGoalie(){
-      Scanner input = new Scanner(System.in);
+      //Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("res/SilverGoalkeepers.txt");
-      try {
-         input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 122);
-         while(r > 0){
-            line = input.nextLine();
-            r--;
-         }}
-         catch (FileNotFoundException ex) {
-            System.out.println("Error: File not found");
-         }
-         input.close();
+ArrayList<String> lines = new ArrayList<String>();      
+//File file = new File("res/GoldGoalkeepers.txt");
+   
+       String fileName="SilverGoalkeepers.txt";
+       try{
+
+          //Create object of FileReader
+          FileReader inputFile = new FileReader(fileName);
+
+          //Instantiate the BufferedReader Class
+          BufferedReader bufferReader = new BufferedReader(inputFile);
+
+          //Variable to hold the one line data
+          //String line;
+
+          // Read file line by line and print on the console
+          while ((line = bufferReader.readLine()) != null)   {
+            lines.add(line);
+          }
+          //Close the buffer reader
+          bufferReader.close();
+       }catch(Exception e){
+          System.out.println("Error while reading file line by line:" + e.getMessage());                      
+       }
+
+      
+      //try {
+         //input = new Scanner(file);
+         int r = 1 + (int) (Math.random() * 100);
+         line = lines.get(r);
+        // while(r > 0){
+            //line = input.nextLine();
+          //  r--;
+        // }
+   
+   //      catch (FileNotFoundException ex) {
+     //       System.out.println("Error: File not found");
+       //  }
+      //   input.close();
          return line;
    }
 
@@ -166,74 +384,182 @@ public class TransferMarket{
    //-------------------------------------------------
 
    public static String getBronzeAttack(){
-      Scanner input = new Scanner(System.in);
+      //Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("res/BronzeAttackers.txt");
-      try {
-         input = new Scanner(file);
+ArrayList<String> lines = new ArrayList<String>();      
+//File file = new File("res/GoldGoalkeepers.txt");
+   
+       String fileName="BronzeAttackers.txt";
+       try{
+
+          //Create object of FileReader
+          FileReader inputFile = new FileReader(fileName);
+
+          //Instantiate the BufferedReader Class
+          BufferedReader bufferReader = new BufferedReader(inputFile);
+
+          //Variable to hold the one line data
+          //String line;
+
+          // Read file line by line and print on the console
+          while ((line = bufferReader.readLine()) != null)   {
+            lines.add(line);
+          }
+          //Close the buffer reader
+          bufferReader.close();
+       }catch(Exception e){
+          System.out.println("Error while reading file line by line:" + e.getMessage());                      
+       }
+
+      
+      //try {
+         //input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 416);
-         while(r > 0){
-            line = input.nextLine();
-            r--;
-         }}
-         catch (FileNotFoundException ex) {
-            System.out.println("Error: File not found");
-         }
-         input.close();
+         line = lines.get(r);
+        // while(r > 0){
+            //line = input.nextLine();
+          //  r--;
+        // }
+   
+   //      catch (FileNotFoundException ex) {
+     //       System.out.println("Error: File not found");
+       //  }
+      //   input.close();
          return line;
    }
 
    public static String getBronzeMidfield(){
-      Scanner input = new Scanner(System.in);
+  //Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("res/BronzeMidfielders.txt");
-      try {
-         input = new Scanner(file);
+ArrayList<String> lines = new ArrayList<String>();      
+//File file = new File("res/GoldGoalkeepers.txt");
+   
+       String fileName="BronzeMidfielders.txt";
+       try{
+
+          //Create object of FileReader
+          FileReader inputFile = new FileReader(fileName);
+
+          //Instantiate the BufferedReader Class
+          BufferedReader bufferReader = new BufferedReader(inputFile);
+
+          //Variable to hold the one line data
+          //String line;
+
+          // Read file line by line and print on the console
+          while ((line = bufferReader.readLine()) != null)   {
+            lines.add(line);
+          }
+          //Close the buffer reader
+          bufferReader.close();
+       }catch(Exception e){
+          System.out.println("Error while reading file line by line:" + e.getMessage());                      
+       }
+
+      
+      //try {
+         //input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 555);
-         while(r > 0){
-            line = input.nextLine();
-            r--;
-         }}
-         catch (FileNotFoundException ex) {
-            System.out.println("Error: File not found");
-         }
-         input.close();
+         line = lines.get(r);
+        // while(r > 0){
+            //line = input.nextLine();
+          //  r--;
+        // }
+   
+   //      catch (FileNotFoundException ex) {
+     //       System.out.println("Error: File not found");
+       //  }
+      //   input.close();
          return line;
    }
 
    public static String getBronzeDefense(){
-      Scanner input = new Scanner(System.in);
+    //Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("res/BronzeDefenders.txt");
-      try {
-         input = new Scanner(file);
+ArrayList<String> lines = new ArrayList<String>();      
+//File file = new File("res/GoldGoalkeepers.txt");
+   
+       String fileName="BronzeDefenders.txt";
+       try{
+
+          //Create object of FileReader
+          FileReader inputFile = new FileReader(fileName);
+
+          //Instantiate the BufferedReader Class
+          BufferedReader bufferReader = new BufferedReader(inputFile);
+
+          //Variable to hold the one line data
+          //String line;
+
+          // Read file line by line and print on the console
+          while ((line = bufferReader.readLine()) != null)   {
+            lines.add(line);
+          }
+          //Close the buffer reader
+          bufferReader.close();
+       }catch(Exception e){
+          System.out.println("Error while reading file line by line:" + e.getMessage());                      
+       }
+
+      
+      //try {
+         //input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 488);
-         while(r > 0){
-            line = input.nextLine();
-            r--;
-         }}
-         catch (FileNotFoundException ex) {
-            System.out.println("Error: File not found");
-         }
-         input.close();
+         line = lines.get(r);
+        // while(r > 0){
+            //line = input.nextLine();
+          //  r--;
+        // }
+   
+   //      catch (FileNotFoundException ex) {
+     //       System.out.println("Error: File not found");
+       //  }
+      //   input.close();
          return line;
    }
 
    public static String getBronzeGoalie(){
-      Scanner input = new Scanner(System.in);
+      //Scanner input = new Scanner(System.in);
       String line = "";
-      File file = new File("res/GoldGoalkeepers.txt");
-      try {
-         input = new Scanner(file);
+ArrayList<String> lines = new ArrayList<String>();      
+//File file = new File("res/GoldGoalkeepers.txt");
+   
+       String fileName="BronzeGoalkeepers.txt";
+       try{
+
+          //Create object of FileReader
+          FileReader inputFile = new FileReader(fileName);
+
+          //Instantiate the BufferedReader Class
+          BufferedReader bufferReader = new BufferedReader(inputFile);
+
+          //Variable to hold the one line data
+          //String line;
+
+          // Read file line by line and print on the console
+          while ((line = bufferReader.readLine()) != null)   {
+            lines.add(line);
+          }
+          //Close the buffer reader
+          bufferReader.close();
+       }catch(Exception e){
+          System.out.println("Error while reading file line by line:" + e.getMessage());                      
+       }
+
+      
+      //try {
+         //input = new Scanner(file);
          int r = 1 + (int) (Math.random() * 183);
-         while(r > 0){
-            line = input.nextLine();
-            r--;
-         }}
-         catch (FileNotFoundException ex) {
-            System.out.println("Error: File not found");
-         }
-         input.close();
+         line = lines.get(r);
+        // while(r > 0){
+            //line = input.nextLine();
+          //  r--;
+        // }
+   
+   //      catch (FileNotFoundException ex) {
+     //       System.out.println("Error: File not found");
+       //  }
+      //   input.close();
          return line;
    }
 
@@ -604,7 +930,7 @@ public static Player BronzeGoalie(){
    player._defense = Integer.parseInt(parse.substring(0,index));
    parse = parse.substring(index + 1);
 
-   player._overall = Integer.parseInt(parse);
+   player._overall = Integer.parseInt(parse.substring(0,parse.length()-1));
 
    return player;
 }

@@ -5,10 +5,20 @@ import java.awt.Image;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.io.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import java.awt.FlowLayout;
+import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class MenuSetup extends JFrame implements ActionListener{
 public static Player trainingplayer = new Player();
 public static  JComboBox jComboBox = new JComboBox();
+  private static BufferedImage image;
+  public static JPanel panel;
   
 public static void main (String[] args) { 
   /*
@@ -38,32 +48,65 @@ public static void running() {
   frame.setVisible(true);
   frame.setSize(1000,400);
   frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-  JPanel panel = new JPanel();
+  panel = new JPanel();
   frame.add(panel);
+  String path = "manager.jpg";
+        File file = new File(path);
+        try{
+        image = ImageIO.read(file);
+        }
+         catch (IOException e) {
+        System.out.println("hello");}
+        JLabel label = new JLabel(new ImageIcon(image));
+       // label.setBounds(300,500,50,50);
+        panel.add(label);
+        
+        
   JButton button = new JButton("Transfer Market");
   panel.add(button);
   button.addActionListener (new Action1());
+  //button.setBounds(5, 5, 30, 20);
   JButton button2 = new JButton("Lineup");
   panel.add(button2);
   button2.addActionListener (new Action2());
+//  button2.setBounds(75, 5, 30, 20);
   JButton button3 = new JButton("Ranking");
   panel.add(button3);
   button3.addActionListener (new Action3());
+//  button3.setBounds(245, 5, 30, 20);
   JButton button4 = new JButton("Training");
   panel.add(button4);
   button4.addActionListener (new Action4());
+  //button4.setBounds(315, 5, 30, 20);
   JButton button5 = new JButton("Roster");
   panel.add(button5);
   button5.addActionListener (new Action5()); 
+//  button5.setBounds(385, 5, 30, 20);
+  
 }
+
 
 static class Action1 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-    JFrame frame2 = new JFrame("Transfer Market");
+    final JFrame frame2 = new JFrame("Transfer Market");
     frame2.setVisible(true);
     frame2.setSize(700,400);
-   
+
+
+    
+    /*
+frame2.addWindowListener(new WindowAdapter() {
+            //I skipped unused callbacks for readability
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+                panel.revalidate();
+                    frame2.setVisible(false);
+                    frame2.dispose();
+                
+            }
+        });
+*/
     JPanel panel = new JPanel();
     
     ImageIcon warnIcon = new ImageIcon("bicyclekick.jpg");
@@ -96,7 +139,7 @@ static class Action1 implements ActionListener {
     Icon final4 = new ImageIcon(warnIconnew3);
     JButton button4 = new JButton(final4);
     button4.setText("Buy Gold Midfielder");
-    button.addActionListener (new Action101());
+    button4.addActionListener (new Action101());
     
        ImageIcon warnIcon5 = new ImageIcon("midsilver.png");
     Image icon5 = warnIcon5.getImage();
@@ -162,6 +205,10 @@ static class Action1 implements ActionListener {
     button12.setText("Buy Bronze Goalkeeper");
     button12.addActionListener (new Action83());
     
+   //   JTextField textField =new JTextField("Money: " + Driver.money);
+       // textField.setBounds(50, 50, 100, 50);
+       
+    
   panel.add(button);
   panel.add(button2);
   panel.add(button3);
@@ -175,8 +222,19 @@ static class Action1 implements ActionListener {
   panel.add(button11);
   panel.add(button12);
   button.addActionListener (new Action1());
+ //  panel.add(textField);
     frame2.add(panel);
- 
+    
+ /*  frame2.addWindowListener(new WindowAdapter()
+{
+    public void windowClosing(WindowEvent e)
+    {
+      //JTextField textField2 =new JTextField("Money: " + Driver.money);
+        textField2.setBounds(50, 50, 100, 50);
+         panel.add(textField2);
+    }
+});
+   */ 
   }
 }
 
@@ -197,6 +255,8 @@ static class Action2 implements ActionListener {
 //TRAINING
 static class Action3 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
+    Ranking.running();
+    /*
     JFrame frame4 = new JFrame("Ranking");
     frame4.setVisible(true);
     frame4.setSize(400,400);
@@ -205,6 +265,7 @@ static class Action3 implements ActionListener {
     JPanel panel = new JPanel();
     frame4.add(panel);
     panel.add(label);
+    */
   }
 }
 static class Action4 implements ActionListener {
@@ -218,7 +279,7 @@ static class Action4 implements ActionListener {
     JPanel panel = new JPanel();
     
    jComboBox = new JComboBox();
-    for (Player a : Driver._roster) {
+    for (Player a : Driver.MyTeam._roster) {
       if (a._pos.equals("A")) {
         jComboBox.addItem(a._name + " | " + a._age + "yrs | " + a._attack);
       }
@@ -282,11 +343,13 @@ frame13.add(panel);
 
 static class Action5 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-    Roster.running();
-    /*JFrame frame6 = new JFrame("Roster");
+   
+   /* JFrame frame6 = new JFrame("Roster");
     frame6.setVisible(true);
-    frame6.setSize(400,400);
-    
+    frame6.setSize(600,600);
+    */
+     Roster.running();
+    /*
     JPanel panel = new JPanel();
     frame6.add(panel);
     panel.add(label);
@@ -312,7 +375,7 @@ public JMenuBar createMenuBar() {
     menuItem.addActionListener(new Action3());
     menu.add(menuItem);
 
-    menuItem = new JMenuItem("Another One");
+    menuItem = new JMenuItem("Roster");
     menuItem.addActionListener(new Action4());
     menu.add(menuItem);
 
@@ -326,164 +389,281 @@ public JMenuBar createMenuBar() {
 
 static class Action100 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
+    
+    if (Driver.money >= 20000) {
  try {     Driver.MyTeam.merge(0,0,0,0,0,0,0,0,0,0,0,1);
-        
+     Driver.money -= 20000;
+        JOptionPane.showMessageDialog(null, "A Gold Attacker has been bought! Check roster to find out who just joined your squad! \n You have $"+ Driver.money + " left.");
      } catch (IOException z) { 
             // This block is to catch divide-by-zero error
             System.out.println("");
-       }
-
-  Driver.money -= 20000;
+     }
+  
+    }
+    else{
+    JOptionPane.showMessageDialog(null, "Insufficient funds, cannot buy player. You only have $" + Driver.money + " left.");
+    }
+    
+    
   }}
 
 static class Action90 implements ActionListener {
   public void actionPerformed(ActionEvent e) {
-   try {     Driver.MyTeam.merge(0,0,0,0,0,0,0,0,0,0,1,0);
-        
+     
+    if (Driver.money >= 14000) {
+ try {     Driver.MyTeam.merge(0,0,0,0,0,0,0,0,0,0,1,0);
+     Driver.money -= 14000;
+        JOptionPane.showMessageDialog(null, "A Silver Attacker has been bought! Check roster to find out who just joined your squad! \n You have $"+ Driver.money + " left.");
      } catch (IOException z) { 
             // This block is to catch divide-by-zero error
             System.out.println("");
-       }
-  Driver.money -= 14000;
+     }
+  
+    }
+    else{
+    JOptionPane.showMessageDialog(null, "Insufficient funds, cannot buy player. You only have $" + Driver.money + " left.");
+    }
+    
+    
   }}
+    
+
 
 static class Action80 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-   try {     Driver.MyTeam.merge(0,0,0,0,0,0,0,0,0,1,0,0);
-        
+     
+    if (Driver.money >= 7500) {
+ try {     Driver.MyTeam.merge(0,0,0,0,0,0,0,0,0,1,0,0);
+     Driver.money -= 7500;
+        JOptionPane.showMessageDialog(null, "A Bronze Attacker has been bought! Check roster to find out who just joined your squad! \n You have $"+ Driver.money + " left.");
      } catch (IOException z) { 
             // This block is to catch divide-by-zero error
             System.out.println("");
-       }
-  Driver.money -= 7500;
+     }
+  
+    }
+    else{
+    JOptionPane.showMessageDialog(null, "Insufficient funds, cannot buy player. You only have $" + Driver.money + " left.");
+    }
+    
+    
   }}
+    
 
 static class Action101 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-   try {     Driver.MyTeam.merge(0,0,0,0,0,0,0,0,1,0,0,0);
-        
+
+    if (Driver.money >= 20000) {
+ try {     Driver.MyTeam.merge(0,0,0,0,0,0,0,0,1,0,0,0);
+     Driver.money -= 20000;
+        JOptionPane.showMessageDialog(null, "A Gold Midfielder has been bought! Check roster to find out who just joined your squad! \n You have $"+ Driver.money + " left.");
      } catch (IOException z) { 
             // This block is to catch divide-by-zero error
             System.out.println("");
-       }
-  Driver.money -= 20000;
+     }
+  
+    }
+    else{
+    JOptionPane.showMessageDialog(null, "Insufficient funds, cannot buy player. You only have $" + Driver.money + " left.");
+    }
+    
+    
   }}
+   
 
 static class Action91 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-   try {     Driver.MyTeam.merge(0,0,0,0,0,0,0,1,0,0,0,0);
-        
+    if (Driver.money >= 14000) {
+ try {     Driver.MyTeam.merge(0,0,0,0,0,0,0,1,0,0,0,0);
+     Driver.money -= 14000;
+        JOptionPane.showMessageDialog(null, "A Silver Midfielder has been bought! Check roster to find out who just joined your squad! \n You have $"+ Driver.money + " left.");
      } catch (IOException z) { 
             // This block is to catch divide-by-zero error
             System.out.println("");
-       }
-  Driver.money -= 14000;
+     }
+  
+    }
+    else{
+    JOptionPane.showMessageDialog(null, "Insufficient funds, cannot buy player. You only have $" + Driver.money + " left.");
+    }
+    
+    
   }}
 
 static class Action81 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-   try {     Driver.MyTeam.merge(0,0,0,0,0,0,1,0,0,0,0,0);
-        
+     
+    if (Driver.money >= 7500) {
+ try {     Driver.MyTeam.merge(0,0,0,0,0,0,1,0,0,0,0,0);
+     Driver.money -= 7500;
+        JOptionPane.showMessageDialog(null, "A Bronze Midfielder has been bought! Check roster to find out who just joined your squad! \n You have $"+ Driver.money + " left.");
      } catch (IOException z) { 
             // This block is to catch divide-by-zero error
             System.out.println("");
-       }
-  Driver.money -= 7500;
+     }
+  
+    }
+    else{
+    JOptionPane.showMessageDialog(null, "Insufficient funds, cannot buy player. You only have $" + Driver.money + " left.");
+    }
+    
+    
   }}
 
 static class Action102 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-  try {     Driver.MyTeam.merge(0,0,0,0,0,1,0,0,0,0,0,0);
-        
+     
+    if (Driver.money >= 20000) {
+ try {     Driver.MyTeam.merge(0,0,0,0,0,1,0,0,0,0,0,0);
+     Driver.money -= 20000;
+        JOptionPane.showMessageDialog(null, "A Gold Defender has been bought! Check roster to find out who just joined your squad! \n You have $"+ Driver.money + " left.");
      } catch (IOException z) { 
             // This block is to catch divide-by-zero error
             System.out.println("");
-       }
-  Driver.money -= 20000;
+     }
+  
+    }
+    else{
+    JOptionPane.showMessageDialog(null, "Insufficient funds, cannot buy player. You only have $" + Driver.money + " left.");
+    }
+    
+    
   }}
-
+   
 static class Action92 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-   try {     Driver.MyTeam.merge(0,0,0,0,1,0,0,0,0,0,0,0);
-        
+    if (Driver.money >= 14000) {
+ try {     Driver.MyTeam.merge(0,0,0,0,1,0,0,0,0,0,0,0);
+     Driver.money -= 14000;
+        JOptionPane.showMessageDialog(null, "A Silver Defender has been bought! Check roster to find out who just joined your squad! \n You have $"+ Driver.money + " left.");
      } catch (IOException z) { 
             // This block is to catch divide-by-zero error
             System.out.println("");
-       }
-  Driver.money -= 14000;
+     }
+  
+    }
+    else{
+    JOptionPane.showMessageDialog(null, "Insufficient funds, cannot buy player. You only have $" + Driver.money + " left.");
+    }
+    
+    
   }}
+    
 
 static class Action82 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-   try {     Driver.MyTeam.merge(0,0,0,1,0,0,0,0,0,0,0,0);
-        
+     
+    if (Driver.money >= 7500) {
+ try {     Driver.MyTeam.merge(0,0,0,1,0,0,0,0,0,0,0,0);
+     Driver.money -= 7500;
+        JOptionPane.showMessageDialog(null, "A Bronze Defender has been bought! Check roster to find out who just joined your squad! \n You have $"+ Driver.money + " left.");
      } catch (IOException z) { 
             // This block is to catch divide-by-zero error
             System.out.println("");
-       }
-  Driver.money -= 7500;
+     }
+  
+    }
+    else{
+    JOptionPane.showMessageDialog(null, "Insufficient funds, cannot buy player. You only have $" + Driver.money + " left.");
+    }
+    
+    
   }}
 
 static class Action103 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-   try {     Driver.MyTeam.merge(0,0,1,0,0,0,0,0,0,0,0,0);
-        
+     
+    if (Driver.money >= 20000) {
+ try {     Driver.MyTeam.merge(0,0,1,0,0,0,0,0,0,0,0,0);
+     Driver.money -= 20000;
+        JOptionPane.showMessageDialog(null, "A Gold Goalkeeper has been bought! Check roster to find out who just joined your squad! \n You have $"+ Driver.money + " left.");
      } catch (IOException z) { 
             // This block is to catch divide-by-zero error
             System.out.println("");
-       }
-  Driver.money -= 20000;
-  }}
-
+     }
+  
+    }
+    else{
+    JOptionPane.showMessageDialog(null, "Insufficient funds, cannot buy player. You only have $" + Driver.money + " left.");
+    }
+    
+    
+  }
+}
+ 
 static class Action93 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-   try {     Driver.MyTeam.merge(0,1,0,0,0,0,0,0,0,0,0,0);
-        
+     
+    if (Driver.money >= 14000) {
+ try {     Driver.MyTeam.merge(0,1,0,0,0,0,0,0,0,0,0,0);
+     Driver.money -= 14000;
+        JOptionPane.showMessageDialog(null, "A Silver Goalkeeper has been bought! Check roster to find out who just joined your squad! \n You have $"+ Driver.money + " left.");
      } catch (IOException z) { 
             // This block is to catch divide-by-zero error
             System.out.println("");
-       }
-  Driver.money -= 14000;
+     }
+  
+    }
+    else{
+    JOptionPane.showMessageDialog(null, "Insufficient funds, cannot buy player. You only have $" + Driver.money + " left.");
+    }
+    
+    
   }}
-
+   
 static class Action83 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-   try {     Driver.MyTeam.merge(1,0,0,0,0,0,0,0,0,0,0,0);
-        
+     
+    if (Driver.money >= 7500) {
+ try {     Driver.MyTeam.merge(1,0,0,0,0,0,0,0,0,0,0,0);
+     Driver.money -= 7500;
+        JOptionPane.showMessageDialog(null, "A Bronze Goalkeeper has been bought! Check roster to find out who just joined your squad! \n You have $"+ Driver.money + " left.");
      } catch (IOException z) { 
             // This block is to catch divide-by-zero error
             System.out.println("");
-       }
-  Driver.money -= 7500;
+     }
+  
+    }
+    else{
+    JOptionPane.showMessageDialog(null, "Insufficient funds, cannot buy player. You only have $" + Driver.money + " left.");
+    }
+    
+    
   }}
+    
 
 static class Action21 implements ActionListener {
 
   public void actionPerformed (ActionEvent e) {
     String cmboitem = (String) jComboBox.getSelectedItem();
     int place = 0;
-    for (Player b : Driver._roster) {
+    for (Player b : Driver.MyTeam._roster) {
       if (b._name.equals(cmboitem.substring(0, cmboitem.indexOf(" ")))){
-       place = Driver._roster.indexOf(b); 
+       place = Driver.MyTeam._roster.indexOf(b); 
       }
     }
   // trainingplayer = Driver._roster.get(place);
-
-    if (Driver._roster.get(place)._pos.equals("A")) {
-  Training.UpgradeAttack(Driver._roster.get(place));
+    if (Driver.money >= 1500) {
+    if (Driver.MyTeam._roster.get(place)._pos.equals("A")) {
+  Training.UpgradeAttack(Driver.MyTeam._roster.get(place));
     }
-    if (Driver._roster.get(place)._pos.equals("M")) {
-  Training.UpgradeMidfield(Driver._roster.get(place));
+    if (Driver.MyTeam._roster.get(place)._pos.equals("M")) {
+  Training.UpgradeMidfield(Driver.MyTeam._roster.get(place));
     }
-    if (Driver._roster.get(place)._pos.equals("D")) {
-  Training.UpgradeDefense(Driver._roster.get(place));
+    if (Driver.MyTeam._roster.get(place)._pos.equals("D")) {
+  Training.UpgradeDefense(Driver.MyTeam._roster.get(place));
     }
-    if (Driver._roster.get(place)._pos.equals("G")) {
-  Training.UpgradeGoalie(Driver._roster.get(place));
+    if (Driver.MyTeam._roster.get(place)._pos.equals("G")) {
+  Training.UpgradeGoalie(Driver.MyTeam._roster.get(place));
     }
-    
-    JOptionPane.showMessageDialog(null, Driver._roster.get(place)._name + " has been trained!" + Driver._roster.get(place)._defense);
+    Driver.money -= 1500;
+    JOptionPane.showMessageDialog(null, Driver.MyTeam._roster.get(place)._name + " has been trained! \n Money left: $"+ Driver.money);
   }
+    else {
+      JOptionPane.showMessageDialog(null, "Player cannot be trained as you have insufficient funds. Play a game to get more money from sponsors. \n Money left: $"+ Driver.money);
+    }
+  }
+  
 }
 /*static class Action21 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
