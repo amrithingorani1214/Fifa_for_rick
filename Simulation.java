@@ -1257,7 +1257,7 @@ public class Simulation {
                 Player attacker = new Player();
                 if (pos == 0) {
                   attacker = pickattack(team1);}
-                else {attacker = pickattack(team1);}
+                if (pos ==1) {attacker = pickattack(team2);}
                 
                 matchday += minute + "'    " + withball._name + " has the ball on the wing after some nice build-up play by " + tname +". \n";
                 matchday += minute + "'    " + withball._name + " fires a cross into the box. \n";
@@ -1524,6 +1524,10 @@ public class Simulation {
      minute += (int) (2+ (Math.random() * 4));
     }
       matchday += " End Game folks! Final Score: " + score1 + " to " + score2 + "\n";
+      if (score1 > score2) {Ranking.record += "W ";}
+      if (score1 < score2) {Ranking.record += "L ";}
+      if (score1 == score2) {Ranking.record += "D ";}
+      Driver.money += 3000;
     return matchday;
   }
     

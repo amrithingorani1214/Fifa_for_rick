@@ -33,8 +33,8 @@ public class Roster extends JFrame
             Attackers.add(Driver.MyTeam._roster.get(i)._name);
             Attackers.add(Driver.MyTeam._roster.get(i)._age);
             Attackers.add(Driver.MyTeam._roster.get(i)._attack);
-            Attackers.add(Driver.MyTeam._roster.get(i)._overall);
             Attackers.add(Driver.MyTeam._roster.get(i)._defense);
+            Attackers.add(Driver.MyTeam._roster.get(i)._overall);
             Attackers.add(Driver.MyTeam._roster.get(i)._goals);
             Attackers.add(Driver.MyTeam._roster.get(i)._assists);
             Attackers.add(Driver.MyTeam._roster.get(i)._injury);
@@ -45,8 +45,8 @@ public class Roster extends JFrame
             Midfielders.add(Driver.MyTeam._roster.get(i)._name);
             Midfielders.add(Driver.MyTeam._roster.get(i)._age);
             Midfielders.add(Driver.MyTeam._roster.get(i)._attack);
-            Midfielders.add(Driver.MyTeam._roster.get(i)._overall);
             Midfielders.add(Driver.MyTeam._roster.get(i)._defense);
+            Midfielders.add(Driver.MyTeam._roster.get(i)._overall);
             Midfielders.add(Driver.MyTeam._roster.get(i)._goals);
             Midfielders.add(Driver.MyTeam._roster.get(i)._assists);
             Midfielders.add(Driver.MyTeam._roster.get(i)._injury);
@@ -57,8 +57,8 @@ public class Roster extends JFrame
             Defenders.add(Driver.MyTeam._roster.get(i)._name);
             Defenders.add(Driver.MyTeam._roster.get(i)._age);
             Defenders.add(Driver.MyTeam._roster.get(i)._attack);
-            Defenders.add(Driver.MyTeam._roster.get(i)._overall);
             Defenders.add(Driver.MyTeam._roster.get(i)._defense);
+            Defenders.add(Driver.MyTeam._roster.get(i)._overall);
             Defenders.add(Driver.MyTeam._roster.get(i)._goals);
             Defenders.add(Driver.MyTeam._roster.get(i)._assists);
             Defenders.add(Driver.MyTeam._roster.get(i)._injury);
@@ -69,8 +69,8 @@ public class Roster extends JFrame
             Goalkeepers.add(Driver.MyTeam._roster.get(i)._name);
             Goalkeepers.add(Driver.MyTeam._roster.get(i)._age);
             Goalkeepers.add(Driver.MyTeam._roster.get(i)._attack);
-            Goalkeepers.add(Driver.MyTeam._roster.get(i)._overall);
             Goalkeepers.add(Driver.MyTeam._roster.get(i)._defense);
+            Goalkeepers.add(Driver.MyTeam._roster.get(i)._overall);
             Goalkeepers.add(Driver.MyTeam._roster.get(i)._goals);
             Goalkeepers.add(Driver.MyTeam._roster.get(i)._assists);
             Goalkeepers.add(Driver.MyTeam._roster.get(i)._injury);

@@ -21,12 +21,13 @@ public class Team {
    
  }
  public Team(String name, int bg, int sg, int gg, int bd, int sd, int gd, int bm, int sm, int gm, int ba, int sa, int ga) throws IOException {
-
+_roster = new ArrayList<Player>();
   _name = name;
 
 /******************Initializing roster***********************/
 
   _roster = new ArrayList<Player>();
+  
   for (int k = 0; k < bg; k++) {
    _roster.add(TransferMarket.BronzeGoalie());
    _numGoalie++;
@@ -155,51 +156,51 @@ public class Team {
 /******************Adding to original roster***********************/
 
   for (int k = 0; k < bg; k++) {
-   _roster.add(TransferMarket.BronzeGoalie());
+   this._roster.add(TransferMarket.BronzeGoalie());
    _numGoalie++;
   }
   for (int k = 0; k < sg; k++) {
-   _roster.add(TransferMarket.SilverGoalie());
+   this._roster.add(TransferMarket.SilverGoalie());
    _numGoalie++;
   }
   for (int k = 0; k < gg; k++) {
-   _roster.add(TransferMarket.GoldGoalie());
+   this._roster.add(TransferMarket.GoldGoalie());
    _numGoalie++;
   }
   for (int k = 0; k < bd; k++) {
-   _roster.add(TransferMarket.BronzeDefender());
+   this._roster.add(TransferMarket.BronzeDefender());
    _numDefend++;
   }
   for (int k = 0; k < sd; k++) {
-   _roster.add(TransferMarket.SilverDefender());
+   this._roster.add(TransferMarket.SilverDefender());
    _numDefend++;
   }
   for (int k = 0; k < gd; k++) {
-   _roster.add(TransferMarket.GoldDefender());
+   this._roster.add(TransferMarket.GoldDefender());
    _numDefend++;
   }
   for (int k = 0; k < bm; k++) {
-   _roster.add(TransferMarket.BronzeMidfielder());
+   this._roster.add(TransferMarket.BronzeMidfielder());
    _numMid++;
   }
   for (int k = 0; k < sm; k++) {
-   _roster.add(TransferMarket.SilverMidfielder());
+   this._roster.add(TransferMarket.SilverMidfielder());
    _numMid++;
   }
   for (int k = 0; k < gm; k++) {
-   _roster.add(TransferMarket.GoldMidfielder());
+   this._roster.add(TransferMarket.GoldMidfielder());
    _numMid++;
   }
   for (int k = 0; k < ba; k++) {
-   _roster.add(TransferMarket.BronzeAttacker());
+   this._roster.add(TransferMarket.BronzeAttacker());
    _numAtt++;
   }
   for (int k = 0; k < sa; k++) {
-   _roster.add(TransferMarket.SilverAttacker());
+   this._roster.add(TransferMarket.SilverAttacker());
    _numAtt++;
   }
   for (int k = 0; k < ga; k++) {
-   _roster.add(TransferMarket.GoldAttacker());
+   this._roster.add(TransferMarket.GoldAttacker());
    _numAtt++;
   }
 
@@ -272,43 +273,45 @@ public class Team {
     
    
     
-    public static void setLineup(Team random) {
+    public static ArrayList<Player> setLineup(ArrayList<Player> random) {
+      ArrayList<Player> newlineup = new ArrayList<Player>();
         ArrayList<Player> Attackers = new ArrayList<Player>();
         ArrayList<Player> Midfielders = new ArrayList<Player>();
         ArrayList<Player> Defenders = new ArrayList<Player>();
         ArrayList<Player> Goalkeepers = new ArrayList<Player>();
         
-        for (int i = 0; i < random._roster.size(); i ++) {
-          if (random._roster.get(i)._pos.equals("A")) {
-            Attackers.add(random._roster.get(i));
+        for (int i = 0; i < random.size(); i ++) {
+          if (random.get(i)._pos.equals("A")) {
+            Attackers.add(random.get(i));
           }
-          if (random._roster.get(i)._pos.equals("M")) {
-            Midfielders.add(random._roster.get(i));
+          if (random.get(i)._pos.equals("M")) {
+            Midfielders.add(random.get(i));
           }
-          if (random._roster.get(i)._pos.equals("D")) {
-            Defenders.add(random._roster.get(i));
+          if (random.get(i)._pos.equals("D")) {
+            Defenders.add(random.get(i));
           }
-          if (random._roster.get(i)._pos.equals("G")) {
-            Goalkeepers.add(random._roster.get(i));
+          if (random.get(i)._pos.equals("G")) {
+            Goalkeepers.add(random.get(i));
           }
         }
-        random._lineup.add(Goalkeepers.get((int) (Math.random() * Goalkeepers.size())));
-       random._lineup.add(Defenders.get((int) (Math.random() * Defenders.size())));
-       random._lineup.add(Defenders.get((int) (Math.random() * Defenders.size())));
-                   random._lineup.add(Defenders.get((int) (Math.random() * Defenders.size())));
-                               random._lineup.add(Defenders.get((int) (Math.random() * Defenders.size())));
-       random._lineup.add(Midfielders.get((int) (Math.random() * Midfielders.size())));
-       random._lineup.add(Midfielders.get((int) (Math.random() * Midfielders.size())));
-       random._lineup.add(Midfielders.get((int) (Math.random() * Midfielders.size())));
-                  random._lineup.add(Attackers.get((int) (Math.random() * Attackers.size())));
-       random._lineup.add(Attackers.get((int) (Math.random() * Attackers.size())));
-      random._lineup.add(Attackers.get((int) (Math.random() * Attackers.size())));
+        
+        newlineup.add(Goalkeepers.get((int) (Math.random() * Goalkeepers.size())));
+       newlineup.add(Defenders.get((int) (Math.random() * Defenders.size())));
+       newlineup.add(Defenders.get((int) (Math.random() * Defenders.size())));
+                   newlineup.add(Defenders.get((int) (Math.random() * Defenders.size())));
+                               newlineup.add(Defenders.get((int) (Math.random() * Defenders.size())));
+       newlineup.add(Midfielders.get((int) (Math.random() * Midfielders.size())));
+       newlineup.add(Midfielders.get((int) (Math.random() * Midfielders.size())));
+       newlineup.add(Midfielders.get((int) (Math.random() * Midfielders.size())));
+                  newlineup.add(Attackers.get((int) (Math.random() * Attackers.size())));
+       newlineup.add(Attackers.get((int) (Math.random() * Attackers.size())));
+      newlineup.add(Attackers.get((int) (Math.random() * Attackers.size())));
+      return newlineup;
       }
     
 
     
  public static void main(String[] args) {
-System.out.println(Driver.MyTeam._roster.size());
  }
     
 }

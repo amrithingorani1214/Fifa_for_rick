@@ -22,6 +22,9 @@ import javax.swing.JTable;
 
 
 public class Ranking extends JFrame{
+  
+  public static JLabel scorer3;
+  public static String record = "Your record: ";
 
   public Ranking() {
      JFrame frame4 = new JFrame("Ranking");
@@ -124,12 +127,19 @@ public class Ranking extends JFrame{
                                
                                 JLabel scorer2 = new JLabel();
                                 
-      scorer2.setText("Highest Assists: " + maxplayera._name + " " + maxa + " assists");     
+      scorer2.setText("Highest Assists: " + maxplayera._name + " " + maxa + " assists                               ");     
       
         main.add(scorer2);
         scorer2.setLocation(30,30);
+    
+        scorer3 = new JLabel();
+                                
+      scorer3.setText(record);   
+       scorer3.setLocation(50,30);
+       main.add(scorer3);
         
-  /*  
+  /*
+   *
    String[] columns = new String[] {
      
           "Team", "Wins", "Losses", "Draws", "Points", "Position", "Goals For", "Goals Against", "Goal Difference"};
@@ -208,7 +218,7 @@ public class Ranking extends JFrame{
         main.add(table);
        */
         frame4.add(main);
-        //table.setVisible(true);
+       // table.setVisible(true);
         main.setVisible(true);
             frame4.setVisible(true);
  

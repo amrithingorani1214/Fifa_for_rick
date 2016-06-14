@@ -46,7 +46,7 @@ public static void running() {
       MenuSetup frame = new MenuSetup();
 
   frame.setVisible(true);
-  frame.setSize(1000,400);
+  frame.setSize(1500,800);
   frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   panel = new JPanel();
   frame.add(panel);
@@ -274,15 +274,7 @@ static class Action3 implements ActionListener {
 }
 static class Action6 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
-    Team team1 = new Team();
-    Team team2 = new Team();
-    if (Driver.matchday == 1) {
-      team1 = Driver.MyTeam;
-      team2 = Driver.CompTeam1; 
-      Team.setLineup(Driver.MyTeam);
-      Team.setLineup(Driver.CompTeam1);
-      MyFrame.gamerun1(Driver.MyTeam._name, Driver.MyTeam._lineup, Driver.CompTeam1._name, Driver.CompTeam1._lineup, Driver.MyTeam._lineup.get(10), Driver.CompTeam1._lineup.get(10), Driver.MyTeam._lineup.get(6), Driver.CompTeam1._lineup.get(6),
-                       Driver.MyTeam._lineup.get(10), Driver.CompTeam1._lineup.get(10));
+    MyFrame.runmatchday();
     }
     //String gamerun(String team1name, Team team1, String team2name, Team team2,Player freekicktaker1, Player freekicktaker2,
       //                          Player cornerkicktaker1, Player cornerkicktaker2, Player penaltytaker1, Player penaltytaker2) {
@@ -297,7 +289,7 @@ static class Action6 implements ActionListener {
     panel.add(label);
     */
   }
-}
+
 static class Action4 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
     
@@ -370,6 +362,7 @@ panel.setVisible(true);
 frame13.add(panel);
   }
 }
+
 
 static class Action5 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
@@ -720,7 +713,7 @@ protected void quit() {
 }
 
 public MenuSetup() {
-    super("Fifa for Rick");
+    super("Fifa Simulation Game");
     setJMenuBar(createMenuBar());
 }
 }

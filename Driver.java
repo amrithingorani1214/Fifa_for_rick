@@ -90,13 +90,15 @@ public class Driver extends JFrame {
   
   public static void setupteams() throws IOException {
     
-   MyTeam = new Team("My Team",0,0,0,0,0,0,0,0,0,0,0,0);
+    MyTeam = new Team("My Team",0,0,0,0,0,0,0,0,0,0,0,0); 
+
   CompTeam1 = new Team("De Godenzonen",0,0,0,0,0,0,0,0,0,0,0,0);
   CompTeam2 = new Team("Tractor Boys",0,0,0,0,0,0,0,0,0,0,0,0);
   CompTeam3 = new Team("The Magical Magyars",0,0,0,0,0,0,0,0,0,0,0,0);
   CompTeam4 = new Team("The Indomitable Lions",0,0,0,0,0,0,0,0,0,0,0,0);
   CompTeam5 = new Team("Socceroos",0,0,0,0,0,0,0,0,0,0,0,0);
 
+   MyTeam.merge(1,0,0,4,0,0,3,0,0,3,0,0);
    //4,5,2
  CompTeam1.merge(0,0,1,1,3,0,1,2,0,0,0,3);
  //MyTeam._roster.add(new Player("Abbiatti", "G", 25, 90.0, 90.0, 90.0));
