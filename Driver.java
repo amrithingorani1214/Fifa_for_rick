@@ -16,6 +16,7 @@ public class Driver extends JFrame {
   //Gold: 20000
   //Silver: 14000
   //Bronze: 7500
+  public static int matchday = 1;
   public static int money = 160000;
 
   //public static ArrayList<Player> _roster = new ArrayList<Player>();
@@ -26,6 +27,7 @@ public class Driver extends JFrame {
   public static ArrayList<Player> MyTeamDefenders = new ArrayList<Player>();
   public static ArrayList<Player> MyTeamGoalkeepers = new ArrayList<Player>();
 */
+  
   public static Team MyTeam;
   public static Team CompTeam1;
   public static Team CompTeam2;

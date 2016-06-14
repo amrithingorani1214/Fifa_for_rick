@@ -46,7 +46,7 @@ ArrayList<String> lines = new ArrayList<String>();
       
       //try {
          //input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 81);
+         int r = (int) (Math.random() * 81);
          line = lines.get(r);
         // while(r > 0){
             //line = input.nextLine();
@@ -91,7 +91,7 @@ ArrayList<String> lines = new ArrayList<String>();
       
       //try {
          //input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 122);
+         int r = (int) (Math.random() * 122);
          line = lines.get(r);
         // while(r > 0){
             //line = input.nextLine();
@@ -136,7 +136,7 @@ ArrayList<String> lines = new ArrayList<String>();
       
       //try {
          //input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 71);
+         int r = (int) (Math.random() * 71);
          line = lines.get(r);
         // while(r > 0){
             //line = input.nextLine();
@@ -181,7 +181,7 @@ ArrayList<String> lines = new ArrayList<String>();
       
       //try {
          //input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 10);
+         int r = (int) (Math.random() * 10);
          line = lines.get(r);
         // while(r > 0){
             //line = input.nextLine();
@@ -230,7 +230,7 @@ ArrayList<String> lines = new ArrayList<String>();
       
       //try {
          //input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 360);
+         int r = (int) (Math.random() * 360);
          line = lines.get(r);
         // while(r > 0){
             //line = input.nextLine();
@@ -275,7 +275,7 @@ ArrayList<String> lines = new ArrayList<String>();
       
       //try {
          //input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 569);
+         int r = (int) (Math.random() * 569);
          line = lines.get(r);
         // while(r > 0){
             //line = input.nextLine();
@@ -320,7 +320,7 @@ ArrayList<String> lines = new ArrayList<String>();
       
       //try {
          //input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 450);
+         int r = (int) (Math.random() * 450);
          line = lines.get(r);
         // while(r > 0){
             //line = input.nextLine();
@@ -365,7 +365,7 @@ ArrayList<String> lines = new ArrayList<String>();
       
       //try {
          //input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 100);
+         int r = (int) (Math.random() * 100);
          line = lines.get(r);
         // while(r > 0){
             //line = input.nextLine();
@@ -414,7 +414,7 @@ ArrayList<String> lines = new ArrayList<String>();
       
       //try {
          //input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 416);
+         int r = (int) (Math.random() * 416);
          line = lines.get(r);
         // while(r > 0){
             //line = input.nextLine();
@@ -459,7 +459,7 @@ ArrayList<String> lines = new ArrayList<String>();
       
       //try {
          //input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 555);
+         int r = (int) (Math.random() * 555);
          line = lines.get(r);
         // while(r > 0){
             //line = input.nextLine();
@@ -504,7 +504,7 @@ ArrayList<String> lines = new ArrayList<String>();
       
       //try {
          //input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 488);
+         int r = (int) (Math.random() * 488);
          line = lines.get(r);
         // while(r > 0){
             //line = input.nextLine();
@@ -549,7 +549,7 @@ ArrayList<String> lines = new ArrayList<String>();
       
       //try {
          //input = new Scanner(file);
-         int r = 1 + (int) (Math.random() * 183);
+         int r = (int) (Math.random() * 183);
          line = lines.get(r);
         // while(r > 0){
             //line = input.nextLine();

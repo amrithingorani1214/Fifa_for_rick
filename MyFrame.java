@@ -14,102 +14,108 @@ public class MyFrame extends JFrame {
 
   
     
-    public static void main ( String[] args ) {
-    	JPanel middlePanel = new JPanel ();
+  public static void main ( String[] args ) {}
+ 
+  
+  
+  public static void gamerun1(String team1name, ArrayList<Player> team1, String team2name, ArrayList<Player> team2,Player freekicktaker1, Player freekicktaker2,
+                                Player cornerkicktaker1, Player cornerkicktaker2, Player penaltytaker1, Player penaltytaker2){
+     JPanel middlePanel = new JPanel ();
 
-	    // create the middle panel components
+     // create the middle panel components
 
-    	JTextArea display = new JTextArea ( 16, 58 );
-    	display.setEditable ( false ); // set textArea non-editable
-    	JScrollPane scroll = new JScrollPane ( display );
-    	scroll.setVerticalScrollBarPolicy ( ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS );
+     JTextArea display = new JTextArea ( 16, 58 );
+     display.setEditable ( false ); // set textArea non-editable
+     JScrollPane scroll = new JScrollPane ( display );
+     scroll.setVerticalScrollBarPolicy ( ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS );
 
-    	//Add Textarea in to middle panel
-    	middlePanel.add ( scroll );
+     //Add Textarea in to middle panel
+     middlePanel.add ( scroll );
 
-	    // My code
-    	JFrame frame = new JFrame("GAMEDAY");
+     // My code
+     JFrame frame = new JFrame("GAMEDAY");
     
-    	frame.add ( middlePanel );
-    	frame.pack ();
-    	frame.setLocationRelativeTo ( null );
+     frame.add ( middlePanel );
+     frame.pack ();
+     frame.setLocationRelativeTo ( null );
 
-    	TextField aTextField = new TextField("");
+     TextField aTextField = new TextField("");
    
-		frame.add(aTextField);
-   		frame.setVisible ( true );
-       	display.setLineWrap(true);
-		display.setWrapStyleWord(true);
+  frame.add(aTextField);
+     frame.setVisible ( true );
+        display.setLineWrap(true);
+  display.setWrapStyleWord(true);
 
-		//Team1
-		Team team1 = new Team(0,0,1,0,0,4,0,0,3,0,0,3);
-		/*
-		ArrayList<Player> team1 = new ArrayList<Player>();
-		team1.add(new Player("Abbiatti", "G", 25, 90, 90, 90));
-		team1.add(new Player("Pepe", "D", 25, 90, 90, 90));
-		team1.add(new Player("Ramos", "D", 25, 90, 90, 90));
-		team1.add(new Player("Alaba", "D", 25, 90, 90, 90));
-		team1.add(new Player("Marquinhos", "D", 25, 90, 90, 90));
-		team1.add(new Player("Kaka", "M", 25, 90, 90, 90));
-		team1.add(new Player("Reus", "M", 25, 90, 90, 90));
-		team1.add(new Player("Ozil", "M", 25, 90, 90, 90));
-		team1.add(new Player("Messi", "A", 25, 90, 90, 90));
-		team1.add(new Player("Ronaldo", "A", 25, 90, 90, 90));
-		team1.add(new Player("Suarez", "A", 25, 90, 90, 90));
-		*/
+  //Team1
+ // Team team1 = new Team("Hello", 0,0,1,0,0,4,0,0,3,0,0,3);
+  /*
+  ArrayList<Player> team1 = new ArrayList<Player>();
+  team1.add(new Player("Abbiatti", "G", 25, 90, 90, 90));
+  team1.add(new Player("Pepe", "D", 25, 90, 90, 90));
+  team1.add(new Player("Ramos", "D", 25, 90, 90, 90));
+  team1.add(new Player("Alaba", "D", 25, 90, 90, 90));
+  team1.add(new Player("Marquinhos", "D", 25, 90, 90, 90));
+  team1.add(new Player("Kaka", "M", 25, 90, 90, 90));
+  team1.add(new Player("Reus", "M", 25, 90, 90, 90));
+  team1.add(new Player("Ozil", "M", 25, 90, 90, 90));
+  team1.add(new Player("Messi", "A", 25, 90, 90, 90));
+  team1.add(new Player("Ronaldo", "A", 25, 90, 90, 90));
+  team1.add(new Player("Suarez", "A", 25, 90, 90, 90));
+  */
 
-		//Team2
-		Team team2 = new Team(0,1,0,0,4,0,0,3,0,0,3,0);
-		/*
-		ArrayList<Player> team2 = new ArrayList<Player>();
-		team2.add(new Player("Cech", "G", 25, 80, 80, 80));
-		team2.add(new Player("Alves", "D", 25, 80, 80, 80));
-		team2.add(new Player("Vermaelen", "D", 25, 80, 80, 80));
-		team2.add(new Player("Boateng", "D", 25, 80, 80, 80));
-		team2.add(new Player("Barta", "D", 25, 80, 80, 80));
-		team2.add(new Player("Rakitic", "M", 25, 80, 80, 80));
-		team2.add(new Player("Xavi", "M", 25, 80, 80, 80));
-		team2.add(new Player("Iniesta", "M", 25, 80, 80, 80));
-		team2.add(new Player("Sanchez", "A", 25, 80, 80, 80));
-		team2.add(new Player("Douglas", "A", 25, 80, 80, 80));
-		team2.add(new Player("Benzema", "A", 25, 80, 80, 80));
-		*/
+  //Team2
+//  Team team2 = new Team("helo", 0,1,0,0,4,0,0,3,0,0,3,0);
+  /*
+  ArrayList<Player> team2 = new ArrayList<Player>();
+  team2.add(new Player("Cech", "G", 25, 80, 80, 80));
+  team2.add(new Player("Alves", "D", 25, 80, 80, 80));
+  team2.add(new Player("Vermaelen", "D", 25, 80, 80, 80));
+  team2.add(new Player("Boateng", "D", 25, 80, 80, 80));
+  team2.add(new Player("Barta", "D", 25, 80, 80, 80));
+  team2.add(new Player("Rakitic", "M", 25, 80, 80, 80));
+  team2.add(new Player("Xavi", "M", 25, 80, 80, 80));
+  team2.add(new Player("Iniesta", "M", 25, 80, 80, 80));
+  team2.add(new Player("Sanchez", "A", 25, 80, 80, 80));
+  team2.add(new Player("Douglas", "A", 25, 80, 80, 80));
+  team2.add(new Player("Benzema", "A", 25, 80, 80, 80));
+  */
 
-		String text = Simulation.gamerun("Best Team",  team1 , "Bad Team", team2, team1.get(10), team2.get(10), team1.get(5), team2.get(5), team1.get(10), team2.get(10));   
-   		String str = "";
+  String text = Simulation.gamerun(team1name, team1, team2name, team2, freekicktaker1,  freekicktaker2,
+                                 cornerkicktaker1,  cornerkicktaker2,  penaltytaker1,  penaltytaker2);   
+     String str = "";
 
-    	while (text.length() > 0) {
-    		str += text.substring(0,text.indexOf("\n"));
-    		text = text.substring(text.indexOf("\n") +1);
-    		str += "\n";
-        	aTextField.setText(str);
-     		try {
-    			Thread.sleep(100);                 //1000 milliseconds is one second.
-			} catch(InterruptedException ex) {
-    			Thread.currentThread().interrupt();
-			}
+     while (text.length() > 0) {
+      str += text.substring(0,text.indexOf("\n"));
+      text = text.substring(text.indexOf("\n") +1);
+      str += "\n";
+         aTextField.setText(str);
+       try {
+       Thread.sleep(100);                 //1000 milliseconds is one second.
+   } catch(InterruptedException ex) {
+       Thread.currentThread().interrupt();
+   }
 
-			// frame.invalidate();
-			//frame.validate();
-			frame.repaint();
-			//   while (text.length() > 0) {
-			//    str += text.substring(0,text.indexOf("\n"));
+   // frame.invalidate();
+   //frame.validate();
+   frame.repaint();
+   //   while (text.length() > 0) {
+   //    str += text.substring(0,text.indexOf("\n"));
 
-			//    text = text.substring(text.indexOf("\n"),text.length()-1);
-			//        frame.add(new TextField(str));
-			 /*    try {
-    			Thread.sleep(5);                 //1000 milliseconds is one second.
-			} catch(InterruptedException ex) {
-    			Thread.currentThread().interrupt();
-			}
-			*/
-			//getContentPane().revalidate();
-			//frame.invalidate();
-			//frame.validate();
-			//frame.repaint();
-		}
+   //    text = text.substring(text.indexOf("\n"),text.length()-1);
+   //        frame.add(new TextField(str));
+    /*    try {
+       Thread.sleep(5);                 //1000 milliseconds is one second.
+   } catch(InterruptedException ex) {
+       Thread.currentThread().interrupt();
+   }
+   */
+   //getContentPane().revalidate();
+   //frame.invalidate();
+   //frame.validate();
+   //frame.repaint();
+  }
 
-	}
+ }
 }
   
    

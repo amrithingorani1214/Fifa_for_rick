@@ -66,9 +66,9 @@ public static void running() {
   panel.add(button);
   button.addActionListener (new Action1());
   //button.setBounds(5, 5, 30, 20);
-  JButton button2 = new JButton("Lineup");
-  panel.add(button2);
-  button2.addActionListener (new Action2());
+  //JButton button2 = new JButton("Lineup");
+  //panel.add(button2);
+  //button2.addActionListener (new Action2());
 //  button2.setBounds(75, 5, 30, 20);
   JButton button3 = new JButton("Ranking");
   panel.add(button3);
@@ -82,6 +82,9 @@ public static void running() {
   panel.add(button5);
   button5.addActionListener (new Action5()); 
 //  button5.setBounds(385, 5, 30, 20);
+  JButton button6 = new JButton("Play Game");
+  panel.add(button6);
+  button6.addActionListener (new Action6()); 
   
 }
 
@@ -189,7 +192,7 @@ frame2.addWindowListener(new WindowAdapter() {
     button10.setText("Buy Gold Goalkeeper");
     button10.addActionListener (new Action103());
     
-     ImageIcon warnIcon11 = new ImageIcon("defbronze.jpg");
+     ImageIcon warnIcon11 = new ImageIcon("goalsilver.jpg");
     Image icon11 = warnIcon11.getImage();
     Image warnIconnew11 = icon11.getScaledInstance(60, 60, java.awt.Image.SCALE_SMOOTH);
     Icon final11 = new ImageIcon(warnIconnew11);
@@ -197,7 +200,7 @@ frame2.addWindowListener(new WindowAdapter() {
     button11.setText("Buy Silver Goalkeeper");
     button11.addActionListener (new Action93());
     
-          ImageIcon warnIcon12 = new ImageIcon("defbronze.jpg");
+          ImageIcon warnIcon12 = new ImageIcon("goalbronze.jpg");
     Image icon12 = warnIcon12.getImage();
     Image warnIconnew12 = icon12.getScaledInstance(60, 60, java.awt.Image.SCALE_SMOOTH);
     Icon final12 = new ImageIcon(warnIconnew12);
@@ -238,24 +241,51 @@ frame2.addWindowListener(new WindowAdapter() {
   }
 }
 
-static class Action2 implements ActionListener {
+/*static class Action2 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
   Lineup.runstuff();
-    /* JFrame frame3 = new JFrame("Lineup");
+     JFrame frame3 = new JFrame("Lineup");
     frame3.setVisible(true);
     frame3.setSize(400,400);
 
     JLabel label = new JLabel("Squad");
     JPanel panel = new JPanel();
     frame3.add(panel);
-    panel.add(label);*/
+    panel.add(label);
   }
 }
+*/
 
 //TRAINING
 static class Action3 implements ActionListener {
   public void actionPerformed (ActionEvent e) {
     Ranking.running();
+    /*
+    JFrame frame4 = new JFrame("Ranking");
+    frame4.setVisible(true);
+    frame4.setSize(400,400);
+
+    JLabel label = new JLabel("Leaderboard");
+    JPanel panel = new JPanel();
+    frame4.add(panel);
+    panel.add(label);
+    */
+  }
+}
+static class Action6 implements ActionListener {
+  public void actionPerformed (ActionEvent e) {
+    Team team1 = new Team();
+    Team team2 = new Team();
+    if (Driver.matchday == 1) {
+      team1 = Driver.MyTeam;
+      team2 = Driver.CompTeam1; 
+      Team.setLineup(Driver.MyTeam);
+      Team.setLineup(Driver.CompTeam1);
+      MyFrame.gamerun1(Driver.MyTeam._name, Driver.MyTeam._lineup, Driver.CompTeam1._name, Driver.CompTeam1._lineup, Driver.MyTeam._lineup.get(10), Driver.CompTeam1._lineup.get(10), Driver.MyTeam._lineup.get(6), Driver.CompTeam1._lineup.get(6),
+                       Driver.MyTeam._lineup.get(10), Driver.CompTeam1._lineup.get(10));
+    }
+    //String gamerun(String team1name, Team team1, String team2name, Team team2,Player freekicktaker1, Player freekicktaker2,
+      //                          Player cornerkicktaker1, Player cornerkicktaker2, Player penaltytaker1, Player penaltytaker2) {
     /*
     JFrame frame4 = new JFrame("Ranking");
     frame4.setVisible(true);
@@ -367,9 +397,9 @@ public JMenuBar createMenuBar() {
     menuItem.addActionListener(new Action1());
     menu.add(menuItem);
 
-    menuItem = new JMenuItem("Lineup");
-    menuItem.addActionListener(new Action2());
-    menu.add(menuItem);
+    //menuItem = new JMenuItem("Lineup");
+    //menuItem.addActionListener(new Action2());
+    //menu.add(menuItem);
 
     menuItem = new JMenuItem("Ranking");
     menuItem.addActionListener(new Action3());

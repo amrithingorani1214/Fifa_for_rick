@@ -129,10 +129,10 @@ public class Ranking extends JFrame{
         main.add(scorer2);
         scorer2.setLocation(30,30);
         
-    
+  /*  
    String[] columns = new String[] {
      
-          "Team", "Wins", "Losses", "Draws", "Points", "Goals For", "Goals Against", "Goal Difference"};
+          "Team", "Wins", "Losses", "Draws", "Points", "Position", "Goals For", "Goals Against", "Goal Difference"};
          
         //actual data for the table in a 2d array
        
@@ -150,12 +150,22 @@ public class Ranking extends JFrame{
         for (int i = 0; i < 6; i++) {
         int maxpoints = 0;
         int maxpos = 0;
-    for (int a : points) {
+        
+        for (int a = 0; a < points.size(); a++) {
+          if (points.get(a) > maxpoints) {
+            maxpos = a;
+            maxpoints = points.get(a);
+          }
+          
+        }
+        
+          for (int a : points) {
       if (a >= maxpoints) {
        maxpoints = a;
-       maxpos = points.get(a);
+       maxpos = points.indexOf(a);
       }
       }
+      
     if (maxpos == 0) {
       standings.add(Driver.MyTeam);}
     if (maxpos == 1) {
@@ -168,10 +178,14 @@ public class Ranking extends JFrame{
       standings.add(Driver.CompTeam4);}
     if (maxpos == 5) {
       standings.add(Driver.CompTeam5);}
-    while (maxpos != -1) {
-      points.set(maxpos, -1);}
+    
+   // while (maxpos != -1) {
+      points.set(maxpos, -1);
+      
         }
-         Object[][] data = new Object[][] {
+        
+    
+        Object[][] data = new Object[][] {
           {standings.get(0)._name, standings.get(0)._wins, standings.get(0)._losses, standings.get(0)._draws, standings.get(0)._points, standings.get(0)._goalsfor, standings.get(0)._goalsagainst,
             (standings.get(0)._goalsfor - standings.get(0)._goalsagainst)}
           ,
@@ -189,11 +203,12 @@ public class Ranking extends JFrame{
         };
         //create table with data
         JTable table = new JTable(data, columns);
-        
+        table.setSize(200,200);
         //add the table to the frame
         main.add(table);
+       */
         frame4.add(main);
-        table.setVisible(true);
+        //table.setVisible(true);
         main.setVisible(true);
             frame4.setVisible(true);
  

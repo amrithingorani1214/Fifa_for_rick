@@ -15,8 +15,12 @@ public class Team {
  public int _draws;
  public int _goalsfor;
  public int _goalsagainst;
+ public ArrayList<Player> _lineup;
 
-    public Team(String name, int bg, int sg, int gg, int bd, int sd, int gd, int bm, int sm, int gm, int ba, int sa, int ga) throws IOException {
+ public Team() {
+   
+ }
+ public Team(String name, int bg, int sg, int gg, int bd, int sd, int gd, int bm, int sm, int gm, int ba, int sa, int ga) throws IOException {
 
   _name = name;
 
@@ -265,9 +269,46 @@ public class Team {
 
 /***************Done Adding players back*****************/
  }
+    
+   
+    
+    public static void setLineup(Team random) {
+        ArrayList<Player> Attackers = new ArrayList<Player>();
+        ArrayList<Player> Midfielders = new ArrayList<Player>();
+        ArrayList<Player> Defenders = new ArrayList<Player>();
+        ArrayList<Player> Goalkeepers = new ArrayList<Player>();
+        
+        for (int i = 0; i < random._roster.size(); i ++) {
+          if (random._roster.get(i)._pos.equals("A")) {
+            Attackers.add(random._roster.get(i));
+          }
+          if (random._roster.get(i)._pos.equals("M")) {
+            Midfielders.add(random._roster.get(i));
+          }
+          if (random._roster.get(i)._pos.equals("D")) {
+            Defenders.add(random._roster.get(i));
+          }
+          if (random._roster.get(i)._pos.equals("G")) {
+            Goalkeepers.add(random._roster.get(i));
+          }
+        }
+        random._lineup.add(Goalkeepers.get((int) (Math.random() * Goalkeepers.size())));
+       random._lineup.add(Defenders.get((int) (Math.random() * Defenders.size())));
+       random._lineup.add(Defenders.get((int) (Math.random() * Defenders.size())));
+                   random._lineup.add(Defenders.get((int) (Math.random() * Defenders.size())));
+                               random._lineup.add(Defenders.get((int) (Math.random() * Defenders.size())));
+       random._lineup.add(Midfielders.get((int) (Math.random() * Midfielders.size())));
+       random._lineup.add(Midfielders.get((int) (Math.random() * Midfielders.size())));
+       random._lineup.add(Midfielders.get((int) (Math.random() * Midfielders.size())));
+                  random._lineup.add(Attackers.get((int) (Math.random() * Attackers.size())));
+       random._lineup.add(Attackers.get((int) (Math.random() * Attackers.size())));
+      random._lineup.add(Attackers.get((int) (Math.random() * Attackers.size())));
+      }
+    
 
+    
  public static void main(String[] args) {
-
+System.out.println(Driver.MyTeam._roster.size());
  }
     
 }
