@@ -38,7 +38,7 @@ Ryzhikov G 35 0 84 42
 Ulreich G 28 0 82 41
 Diego G 33 0 83 41
 Karcemarskas G 33 0 83 41
-Claudio-Bravo G  0 83 41
+Claudio-Bravo G 27 0 83 41
 Foster G 33 0 83 41
 Julio-Cesar G 36 0 84 42
 Beto G 34 0 83 41
@@ -116,7 +116,7 @@ Sorensen G 40 0 77 38
 Velthuizen G 29 0 75 37
 Adrian G 29 0 75 37
 Tyton G 29 0 75 27
-Vagner G 0 0 75 37
+Vagner G 33 0 75 37
 Moya G 32 0 75 37
 Talavera G 33 0 75 37
-Frey G 3 0 75 37
+Frey G 33 0 75 37
